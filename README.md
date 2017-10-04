@@ -21,3 +21,4 @@ localhost://8080/locacao
 * Os bugs podem ser de qualquer natureza
 * Os testes podem envolver mais ferramentas além do JUnit
 * Os grupos devem apresentar o código gerado no seu fork na aula seguinte, para depois realizar o pull request
+* ** Bugs já reportados não devem ser duplicados. Podem ser adicionadas novas informações nos comentários. **
