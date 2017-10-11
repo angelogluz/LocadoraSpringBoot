@@ -21,7 +21,7 @@ public class UsuarioRepositoryExemploTeste {
 
     @Before
     public void setup() {
-        
+
     }
 
     @Test
@@ -47,4 +47,10 @@ public class UsuarioRepositoryExemploTeste {
         Usuario u = clientRepository.findByNome(u1.getNome());
         assertEquals(usuario.getNome(), u.getNome());
     }
+
+    @Test
+    public void dd() {
+
+    }
+
 }
