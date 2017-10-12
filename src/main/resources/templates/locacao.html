@@ -36,7 +36,7 @@
                 <select class="container" id="filmes" th:field="*{filmes}" size="10" multiple="true" required="true">
                     <option th:each="filme : ${todosFilmes}"
                             th:value="${{filme}}"
-                            th:text="${filme}">
+                            th:text="${filme.nome} + '  -  Disponíveis: ' +  ${filme.estoque} + ' -  Valor: '+ ${#numbers.formatDecimal(filme.precoLocacao,1,2)}">
                         Filme
                     </option>
                 </select>
