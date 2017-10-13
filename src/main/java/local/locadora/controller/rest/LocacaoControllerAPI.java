@@ -51,6 +51,7 @@ public class LocacaoControllerAPI {
     public ResponseEntity<?> getLocacao(@PathVariable("id") long id) {
         
         Locacao locacao = locacaoDAO.findById(id);
+        System.out.println(locacao.getUsuario().getNome());
         if (locacao == null) {
             
             return new ResponseEntity(HttpStatus.NOT_FOUND);

@@ -6,10 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import local.locadora.dao.UsuarioDAO;
+import local.locadora.exceptions.LocadoraException;
+import local.locadora.exceptions.UsuarioException;
 import org.springframework.ui.Model;
 
 @Controller
-public class UsuarioController {
+public class UsuarioController{
 
     private UsuarioDAO usuarioRepository;
 
@@ -28,7 +30,10 @@ public class UsuarioController {
     
     @PostMapping("/usuario")
     //@ResponseBody
-    public void save(Usuario usuario, Model model) {
+    public void save(Usuario usuario, Model model) throws UsuarioException {
+        if (usuario.getNome().equals("")){
+            throw new UsuarioException("Impossivel salvar usuario sem nome");
+        }
         usuarioRepository.save(usuario);
         list(model);
     }
