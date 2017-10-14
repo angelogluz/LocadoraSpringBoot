@@ -1,11 +1,10 @@
 package local.locadora.entities;
 
-import antlr.StringUtils;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.*;
 import local.locadora.exceptions.UsuarioException;
-import org.springframework.util.NumberUtils;
+import local.locadora.utils.NumberUtils;
 
 @Entity
 public class Usuario implements Serializable {
@@ -30,17 +29,13 @@ public class Usuario implements Serializable {
         if (nome.equals("")) {
             throw new UsuarioException("Usuario sem nome");
         }
-        
-        
-        
-//        if (StringUtils.isNumericSpace(nome) == true) {
-//            throw new UsuarioException("Usuario com numero no nome");
-//        }
-//        this.nome = nome;
-       return "Ok";
+        if (NumberUtils.isNumeric(nome) == true) {
+            throw new UsuarioException("Usuario com numero no nome");
+        }
+        this.nome = nome;
+        return "Ok";
     }
     
-
     public void setId(Long id) {
         this.id = id;
     }

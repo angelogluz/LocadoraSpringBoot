@@ -59,33 +59,30 @@ public class TesteUsuario {
         String retorno;
         Usuario usuario = new Usuario();
 
-//        //Ação
-//        try {
-////           clientRepository.save(usuario);
+        //Ação
+        try {
             retorno = usuario.setNome(nome);
-            if (!retorno.equals("Ok")) {
-                fail();
-            }
-//        } catch (UsuarioException e) {
-//            Assert.assertEquals("Usuario sem nome", e.getMessage());
-//        }
+      
+        } catch (UsuarioException e) {
+            Assert.assertEquals("Usuario sem nome", e.getMessage());
+        }
     }
     
     @Test
     public void nãoDeveSalvarUsuarioComNumeroNoNome() throws UsuarioException {
         
-         //Cenário
+        //Cenário
         String nome = "1111";
         String retorno;
         Usuario usuario = new Usuario();
 
-//        //Ação
-//        try {
-////           clientRepository.save(usuario);
+        //Ação
+        try {
             retorno = usuario.setNome(nome);
-            if (!retorno.equals("Ok")) {
-                fail();
-            }
+        
+            } catch (UsuarioException e) {
+            Assert.assertEquals("Usuario com numero no nome", e.getMessage());
+        }
         
     }
 }
