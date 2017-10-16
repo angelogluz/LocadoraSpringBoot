@@ -16,9 +16,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LocacaoDAO extends JpaRepository<Locacao, Long> {
 
-    boolean deleteById(Long id);
-
-    Locacao findById(Long id);
-
     boolean existsById(Locacao locacao);
 }

@@ -28,7 +28,7 @@ public class UsuarioRepositoryExemploTeste {
     public void testFindById() {
         Usuario usuario = new Usuario("Foo");
         Usuario u1 = clientRepository.save(usuario);
-        Usuario u = clientRepository.findById(u1.getId());
+        Usuario u = clientRepository.findById(u1.getId()).get();
         assertEquals("Foo", u.getNome());
     }
 
@@ -36,7 +36,7 @@ public class UsuarioRepositoryExemploTeste {
     public void testFindByIdDefaultSpringData() {
         Usuario usuario = new Usuario("Foo");
         Usuario u1 = clientRepository.save(usuario);
-        Usuario u = clientRepository.findOne(u1.getId());
+        Usuario u = clientRepository.findById(u1.getId()).get();
         assertEquals("Foo", u.getNome());
     }
 

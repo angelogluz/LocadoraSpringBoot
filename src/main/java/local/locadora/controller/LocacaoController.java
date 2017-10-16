@@ -41,7 +41,7 @@ public class LocacaoController {
     @Autowired
     private UsuarioDAO usuarioRepository;
 
-    @GetMapping({"/locacao"})
+    @GetMapping({"/locacao","/"})
     //@ResponseBody
     public String list(Model model) {
 

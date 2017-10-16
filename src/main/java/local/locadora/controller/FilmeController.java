@@ -19,7 +19,7 @@ public class FilmeController {
         
     }
 
-    @GetMapping({"/filme","/"})
+    @GetMapping({"/filme"})
     //@ResponseBody
     public String list(Model model) {
         model.addAttribute("filmes",filmeRepository.findAll());

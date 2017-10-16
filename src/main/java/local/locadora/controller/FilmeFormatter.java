@@ -23,7 +23,7 @@ public class FilmeFormatter implements Formatter<Filme> {
 	@Override
 	public Filme parse(String id, Locale locale) throws ParseException {
 		
-                return filmeDAO.findById(Long.parseLong(id));
+                return filmeDAO.findById(Long.parseLong(id)).get();
 		
 	}
 }

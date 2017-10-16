@@ -21,10 +21,6 @@ import org.springframework.stereotype.Repository;
 public interface FilmeDAO extends JpaRepository<Filme, Long> {
 
     List<Filme> findByNome(String nome);
-    
-    boolean deleteById(Long id);
-
-    Filme findById(Long id);
 
     Slice<Filme> findTop3ByNome(String lastname, Pageable pageable);
 

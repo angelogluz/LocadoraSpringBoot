@@ -50,7 +50,7 @@ public class FilmeControllerAPI {
     @RequestMapping(value = "/filme/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getFilme(@PathVariable("id") long id) {
         
-        Filme filme = filmeDAO.findById(id);
+        Filme filme = filmeDAO.findById(id).get();
         if (filme == null) {
             
             return new ResponseEntity(HttpStatus.NOT_FOUND);
@@ -76,7 +76,7 @@ public class FilmeControllerAPI {
     @RequestMapping(value = "/filme/{id}", method = RequestMethod.PUT)
     public ResponseEntity<?> updateFilme(@PathVariable("id") long id, @RequestBody Filme filme) {
         
-        Filme currentFilme = filmeDAO.findById(id);
+        Filme currentFilme = filmeDAO.findById(id).get();
  
         if (currentFilme == null) {
              return new ResponseEntity(HttpStatus.NOT_FOUND);
@@ -94,11 +94,11 @@ public class FilmeControllerAPI {
  
     @RequestMapping(value = "/filme/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteFilme(@PathVariable("id") long id) {
-        Filme filme = filmeDAO.findById(id);
+        Filme filme = filmeDAO.findById(id).get();
         if (filme == null) {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
-        filmeDAO.delete(id);
+        filmeDAO.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
  

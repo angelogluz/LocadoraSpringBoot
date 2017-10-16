@@ -50,7 +50,7 @@ public class LocacaoControllerAPI {
     @RequestMapping(value = "/locacao/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getLocacao(@PathVariable("id") long id) {
         
-        Locacao locacao = locacaoDAO.findById(id);
+        Locacao locacao = locacaoDAO.findById(id).get();
         if (locacao == null) {
             
             return new ResponseEntity(HttpStatus.NOT_FOUND);
@@ -76,7 +76,7 @@ public class LocacaoControllerAPI {
     @RequestMapping(value = "/locacao/{id}", method = RequestMethod.PUT)
     public ResponseEntity<?> updateLocacao(@PathVariable("id") long id, @RequestBody Locacao locacao) {
         
-        Locacao currentLocacao = locacaoDAO.findById(id);
+        Locacao currentLocacao = locacaoDAO.findById(id).get();
  
         if (currentLocacao == null) {
              return new ResponseEntity(HttpStatus.NOT_FOUND);
@@ -95,11 +95,11 @@ public class LocacaoControllerAPI {
  
     @RequestMapping(value = "/locacao/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteLocacao(@PathVariable("id") long id) {
-        Locacao locacao = locacaoDAO.findById(id);
+        Locacao locacao = locacaoDAO.findById(id).get();
         if (locacao == null) {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
-        locacaoDAO.delete(id);
+        locacaoDAO.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
  

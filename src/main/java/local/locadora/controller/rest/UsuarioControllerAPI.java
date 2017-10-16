@@ -50,7 +50,7 @@ public class UsuarioControllerAPI {
     @RequestMapping(value = "/usuario/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getUsuario(@PathVariable("id") long id) {
         
-        Usuario usuario = usuarioDAO.findById(id);
+        Usuario usuario = usuarioDAO.findById(id).get();
         if (usuario == null) {
             
             return new ResponseEntity(HttpStatus.NOT_FOUND);
@@ -76,7 +76,7 @@ public class UsuarioControllerAPI {
     @RequestMapping(value = "/usuario/{id}", method = RequestMethod.PUT)
     public ResponseEntity<?> updateUsuario(@PathVariable("id") long id, @RequestBody Usuario usuario) {
         
-        Usuario currentUsuario = usuarioDAO.findById(id);
+        Usuario currentUsuario = usuarioDAO.findById(id).get();
  
         if (currentUsuario == null) {
              return new ResponseEntity(HttpStatus.NOT_FOUND);
@@ -92,11 +92,11 @@ public class UsuarioControllerAPI {
  
     @RequestMapping(value = "/usuario/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteUsuario(@PathVariable("id") long id) {
-        Usuario usuario = usuarioDAO.findById(id);
+        Usuario usuario = usuarioDAO.findById(id).get();
         if (usuario == null) {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
-        usuarioDAO.delete(id);
+        usuarioDAO.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
  

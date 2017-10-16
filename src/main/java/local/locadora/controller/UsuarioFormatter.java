@@ -21,6 +21,6 @@ public class UsuarioFormatter implements Formatter<Usuario> {
 
     @Override
     public Usuario parse(String id, Locale locale) throws ParseException {
-        return userDAO.findById(Long.parseLong(id));
+        return userDAO.findById(Long.parseLong(id)).get();
     }
 }

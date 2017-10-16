@@ -16,11 +16,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UsuarioDAO extends JpaRepository<Usuario, Long> {
 
-    Usuario findById(Long id);
-    
     Usuario findByNome(String nome);
-    
-    boolean deleteById(Long id);
+
 
     boolean existsById(Usuario Usuario);
 }

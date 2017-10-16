@@ -2,7 +2,7 @@
 <html lang="pt" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <!-- Required meta tags -->
-        <meta charset="utf-8"/>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
         <!-- Bootstrap CSS -->
@@ -23,7 +23,7 @@
             <form th:object="${locacao}" th:action="@{/locacao}" method="post">
                 <input type="hidden" th:field="*{id}" />
                 <label for="usuario">Usuário</label>
-                <select class="custom-select" th:field="*{usuario}">
+                <select class="custom-select" th:field="*{usuario}" id="usuario">
                     <option th:each="usuario : ${usuarios}"
                             th:value="${{usuario}}"
                             th:text="${usuario.nome}">
