@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import org.springframework.format.annotation.NumberFormat;
 
 @Entity
 public class Filme implements Serializable {
@@ -20,6 +21,7 @@ public class Filme implements Serializable {
     @Column
     private Integer estoque;
     @Column
+    @NumberFormat(pattern = "#,##0.00")
     private Double precoLocacao;
 
     public Filme() {

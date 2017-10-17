@@ -36,7 +36,7 @@
                 <select class="container" id="filmes" th:field="*{filmes}" size="10" multiple="true" required="true">
                     <option th:each="filme : ${todosFilmes}"
                             th:value="${{filme}}"
-                            th:text="${filme}">
+                            th:text="${filme.nome} + '  |  Em Estoque: ' +  ${filme.estoque} + ' |  Valor: R$'+ ${#numbers.formatDecimal(filme.precoLocacao,1,2)}">
                         Filme
                     </option>
                 </select>
@@ -53,13 +53,17 @@
                         <th>Nome</th>
                         <th>Data de Locação</th>
                         <th>Data de Entrega</th>
+                        <th>Filmes</th>
+                        <th>Valor</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="locacao : ${locacoes}" >
                         <td th:text="${locacao.usuario.nome}" scope="row"/>
-                        <td th:text="${locacao.dataLocacao}"/>
-                        <td th:text="${locacao.dataRetorno}"/>
+                        <td th:text="${{locacao.dataLocacao}}"/>
+ +                      <td th:text="${{locacao.dataRetorno}}"/>
+                        <td th:text="${locacao.filmes}"/>
+                        <td th:text="|R$ ${{locacao.valor}}|"/>
                     </tr>
                 </tbody>
             </table>

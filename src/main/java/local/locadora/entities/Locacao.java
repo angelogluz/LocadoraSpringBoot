@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Locacao implements Serializable {
@@ -18,8 +19,11 @@ public class Locacao implements Serializable {
     private List<Filme> filmes;
     
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="dd/MM/yyyy")
     private Date dataLocacao;
+    
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="dd/MM/yyyy")
     private Date dataRetorno;
     private Double valor;
     
