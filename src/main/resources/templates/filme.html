@@ -22,15 +22,15 @@
             <form method="post" action="/filme">
                 <div class="form-group">
                     <label for="formNome">Filme</label>
-                    <input type="text" class="form-control" id="formNome" name="nome" placeholder="Um filme qualquer"/>
+                    <input type="text" class="form-control" id="formNome" name="nome" placeholder="Um filme qualquer" required="required"/>
                 </div>
                 <div class="form-group">
                     <label for="formEstoque">Estoque</label>
-                    <input type="number" class="form-control" id="formEstoque" name="estoque" placeholder="Quantidade em estoque"/>
+                    <input type="number" class="form-control" id="formEstoque" name="estoque" placeholder="Quantidade em estoque" required="required"/>
                 </div>
                 <div class="form-group">
                     <label for="formPrecoLocacao">Valor</label>
-                    <input type="number" class="form-control" id="formPrecoLocacao" name="precoLocacao" placeholder="Valor da locação"/>
+                    <input type="number" step="0.01" class="form-control" id="formPrecoLocacao" name="precoLocacao" placeholder="Valor da locação" required="required" />
                 </div>
                 <button type="submit" class="btn btn-primary">Salvar</button>
             </form>
@@ -51,7 +51,7 @@
                         <th th:text="${filme.id}" scope="row"/>
                         <td th:text="${filme.nome}"/>
                         <td th:text="${filme.estoque}"/>
-                        <td th:text="${filme.precoLocacao}"/>
+                        <td th:text="${#numbers.formatDecimal(filme.precoLocacao,1,2)}"/>
                     </tr>
                 </tbody>
             </table>
