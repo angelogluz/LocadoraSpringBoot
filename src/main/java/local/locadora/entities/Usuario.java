@@ -3,6 +3,7 @@ package local.locadora.entities;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.*;
+import local.locadora.exceptions.UsuarioException;
 
 @Entity
 public class Usuario implements Serializable {
@@ -23,7 +24,10 @@ public class Usuario implements Serializable {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(String nome) throws UsuarioException {
+         if (nome.equals("")) {
+             throw new UsuarioException("Não é possível cadastrar um usuário sem nome.");
+         } 
         this.nome = nome;
     }
 

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import local.locadora.dao.UsuarioDAO;
+import local.locadora.exceptions.UsuarioException;
 import org.springframework.ui.Model;
 
 @Controller
@@ -28,7 +29,7 @@ public class UsuarioController {
     
     @PostMapping("/usuario")
     //@ResponseBody
-    public void save(Usuario usuario, Model model) {
+    public void save(Usuario usuario, Model model){
         usuarioRepository.save(usuario);
         list(model);
     }
