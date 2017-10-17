@@ -15,6 +15,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import static org.mockito.Mockito.when;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -34,6 +36,9 @@ public class TesteUsuario {
 
     public TesteUsuario() {
     }
+    
+    @Mock
+    private Usuario user;
 
     @BeforeClass
     public static void setUpClass() {
@@ -50,15 +55,17 @@ public class TesteUsuario {
     @After
     public void tearDown() {
     }
+    
+    
 
     @Test
-    public void nãoDeveSalvarUsuarioSemNome() throws UsuarioException {
+    public void nãoDeveSalvarUsuarioSemNome(){
 
         //Cenário
         String nome = "";
         String retorno;
         Usuario usuario = new Usuario();
-
+        
         //Ação
         try {
             retorno = usuario.setNome(nome);
@@ -69,7 +76,7 @@ public class TesteUsuario {
     }
     
     @Test
-    public void nãoDeveSalvarUsuarioComNumeroNoNome() throws UsuarioException {
+    public void nãoDeveSalvarUsuarioComNumeroNoNome(){
         
         //Cenário
         String nome = "1111";
@@ -84,5 +91,13 @@ public class TesteUsuario {
             Assert.assertEquals("Usuario com numero no nome", e.getMessage());
         }
         
+    }
+    
+    
+    //Testes efetuados com Mockito
+    @Test
+    public void testeUsuario() throws UsuarioException{
+        when(user.setNome("")).thenReturn("Usuario sem nome");
+        when(user.setNome("12345")).thenReturn("Usuario com numero no nome");
     }
 }
