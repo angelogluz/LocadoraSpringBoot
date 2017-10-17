@@ -21,6 +21,8 @@ import org.springframework.stereotype.Repository;
 public interface FilmeDAO extends JpaRepository<Filme, Long> {
 
     List<Filme> findByNome(String nome);
+    
+    boolean deleteById(Long id);
 
     Filme findById(Long id);
 
@@ -29,4 +31,6 @@ public interface FilmeDAO extends JpaRepository<Filme, Long> {
     List<Filme> findFirst10ByNome(String lastname, Sort sort);
 
     List<Filme> findByEstoqueGreaterThan(Integer estoque);
+    
+    boolean existsById(Filme filme);
 }
