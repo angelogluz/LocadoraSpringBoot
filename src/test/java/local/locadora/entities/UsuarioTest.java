@@ -53,7 +53,7 @@ public class UsuarioTest {
         
         //Ação
         try {
-            usuario.setNome("44");
+            usuario.setNome("");
             Assert.fail();
 // faz com que falhe a asserçao de dados sem verificar as condiçoes e
 // exibe a mensagem formatada abaixo

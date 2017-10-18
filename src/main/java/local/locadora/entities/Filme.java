@@ -22,7 +22,6 @@ public class Filme implements Serializable {
     @Column
     private Integer estoque;
     @Column
-    @NumberFormat(pattern = "#,##0.00")
     private Double precoLocacao;
 
     public Filme() {
