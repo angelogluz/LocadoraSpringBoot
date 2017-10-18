@@ -12,6 +12,8 @@ package local.locadora.controller.rest;
 
  
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -83,7 +85,11 @@ public class UsuarioControllerAPI {
              return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
  
-        currentUsuario.setNome(usuario.getNome());
+        try {
+            currentUsuario.setNome(usuario.getNome());
+        } catch (UsuarioException ex) {
+            Logger.getLogger(UsuarioControllerAPI.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         usuarioDAO.save(currentUsuario);
         return new ResponseEntity<>(currentUsuario, HttpStatus.OK);

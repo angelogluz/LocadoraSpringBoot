@@ -14,7 +14,7 @@ import org.springframework.ui.Model;
 public class UsuarioController {
 
     private UsuarioDAO usuarioRepository;
-
+    
     @Autowired
     public UsuarioController(UsuarioDAO usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
@@ -31,6 +31,7 @@ public class UsuarioController {
     @PostMapping("/usuario")
     //@ResponseBody
     public void save(Usuario usuario, Model model) {
+
         usuarioRepository.save(usuario);
         list(model);
     }
