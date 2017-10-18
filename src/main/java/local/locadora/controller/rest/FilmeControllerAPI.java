@@ -25,6 +25,9 @@ import org.springframework.web.util.UriComponentsBuilder;
  
 import local.locadora.dao.FilmeDAO;
 import local.locadora.entities.Filme;
+import local.locadora.exceptions.FilmeSemEstoqueException;
+import local.locadora.exceptions.FilmeSemNomeException;
+import local.locadora.exceptions.FilmeSemPrecoException;
  
 @RestController
 @RequestMapping("/api")
@@ -74,7 +77,7 @@ public class FilmeControllerAPI {
     // ------------------- Update a Filme ------------------------------------------------
  
     @RequestMapping(value = "/filme/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<?> updateFilme(@PathVariable("id") long id, @RequestBody Filme filme) {
+    public ResponseEntity<?> updateFilme(@PathVariable("id") long id, @RequestBody Filme filme) throws FilmeSemNomeException, FilmeSemEstoqueException, FilmeSemPrecoException {
         
         Filme currentFilme = filmeDAO.findById(id);
  

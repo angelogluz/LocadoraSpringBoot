@@ -1,6 +1,7 @@
 package local.locadora.entities;
 
 
+import local.locadora.exceptions.FilmeSemPrecoException;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import org.springframework.format.annotation.NumberFormat;
+import local.locadora.exceptions.FilmeSemEstoqueException;
+import local.locadora.exceptions.FilmeSemNomeException;
 
 @Entity
 public class Filme implements Serializable {
@@ -38,24 +41,40 @@ public class Filme implements Serializable {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public String setNome(String nome) throws FilmeSemNomeException{
+        if(nome.equals("")){
+            throw new FilmeSemNomeException("Filme sem nome");
+        }
+        
         this.nome = nome;
+        return "ok";
+        
     }
 
     public Integer getEstoque() {
         return estoque;
     }
 
-    public void setEstoque(Integer estoque) {
+    public String setEstoque(Integer estoque) throws FilmeSemEstoqueException {
+        if(estoque == 0){
+            throw new FilmeSemEstoqueException("Filme sem estoque");
+        }
+        
         this.estoque = estoque;
+        return "OK";
     }
 
     public Double getPrecoLocacao() {
         return precoLocacao;
     }
 
-    public void setPrecoLocacao(Double precoLocacao) {
+    public String setPrecoLocacao(Double precoLocacao) throws FilmeSemPrecoException {
+        if(precoLocacao == 0){
+            throw new FilmeSemPrecoException("Filme sem preço");
+        }
+        
         this.precoLocacao = precoLocacao;
+        return "ok";
     }
 
     public void setId(Long id) {
