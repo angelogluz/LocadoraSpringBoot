@@ -15,6 +15,7 @@ import local.locadora.dao.UsuarioDAO;
 import local.locadora.entities.Filme;
 import local.locadora.entities.Locacao;
 import local.locadora.entities.Usuario;
+import local.locadora.exceptions.FilmeException;
 import local.locadora.exceptions.FilmeSemEstoqueException;
 import local.locadora.exceptions.LocadoraException;
 import local.locadora.utils.DataUtils;
@@ -56,7 +57,7 @@ public class LocacaoController {
     }
 
     @PostMapping({"/locacao"})
-    public Locacao alugarFilme(Locacao locacao, Model model) throws FilmeSemEstoqueException, LocadoraException {
+    public Locacao alugarFilme(Locacao locacao, Model model) throws FilmeSemEstoqueException, LocadoraException, FilmeException {
         Usuario usuario = locacao.getUsuario();
         locacao.setDataLocacao(new Date());
         List<Filme> filmes = locacao.getFilmes();

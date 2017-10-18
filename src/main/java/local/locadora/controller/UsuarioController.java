@@ -29,7 +29,7 @@ public class UsuarioController {
     
     @PostMapping("/usuario")
     //@ResponseBody
-    public void save(Usuario usuario, Model model){
+    public void save(Usuario usuario, Model model) throws UsuarioException{
         usuarioRepository.save(usuario);
         list(model);
     }

@@ -25,6 +25,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  
 import local.locadora.dao.UsuarioDAO;
 import local.locadora.entities.Usuario;
+import local.locadora.exceptions.UsuarioException;
  
 @RestController
 @RequestMapping("/api")
@@ -74,7 +75,7 @@ public class UsuarioControllerAPI {
     // ------------------- Update a Usuario ------------------------------------------------
  
     @RequestMapping(value = "/usuario/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<?> updateUsuario(@PathVariable("id") long id, @RequestBody Usuario usuario) {
+    public ResponseEntity<?> updateUsuario(@PathVariable("id") long id, @RequestBody Usuario usuario) throws UsuarioException {
         
         Usuario currentUsuario = usuarioDAO.findById(id);
  

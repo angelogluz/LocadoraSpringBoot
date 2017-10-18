@@ -33,9 +33,37 @@ public class FilmeTest {
     @After
     public void tearDown() {
     }
+    
+    @Test
+    public void filmeNomeVazio() throws FilmeException {
+        //Cenário
+        Filme filme = new Filme();
+        
+        //Ação
+        try {
+            filme.setNome("");
+            Assert.fail();
+        } catch (FilmeException e) {
+            assertEquals("Não é possível cadastrar um filme sem nome.", e.getMessage());
+        }
+    }
+    
+    @Test
+    public void filmeEstoqueVazio() throws FilmeException {
+        //Cenário
+        Filme filme = new Filme();
+        
+        //Ação
+        try {
+            filme.setEstoque(null);
+            Assert.fail();
+        } catch (FilmeException e) {
+            assertEquals("Não é possível cadastrar um filme sem valor no estoque.", e.getMessage());
+        }
+    }
 
     @Test
-    public void PrecoLocacaoVazio() throws FilmeException {
+    public void filmePrecoLocacaoVazio() throws FilmeException {
         //Cenário
         Filme filme = new Filme();
         
