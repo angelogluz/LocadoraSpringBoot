@@ -41,6 +41,13 @@ public class LocacaoController {
     @Autowired
     private UsuarioDAO usuarioRepository;
 
+    public LocacaoController() {
+    }
+
+    public LocacaoController(LocacaoDAO locacaoRepository) {
+        this.locacaoRepository = locacaoRepository;
+    }
+
     @GetMapping({"/locacao"})
     //@ResponseBody
     public String list(Model model) {
