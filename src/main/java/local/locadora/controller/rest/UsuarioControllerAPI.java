@@ -12,6 +12,8 @@ package local.locadora.controller.rest;
 
  
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,6 +27,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  
 import local.locadora.dao.UsuarioDAO;
 import local.locadora.entities.Usuario;
+import local.locadora.exceptions.UsuarioException;
  
 @RestController
 @RequestMapping("/api")
@@ -74,7 +77,7 @@ public class UsuarioControllerAPI {
     // ------------------- Update a Usuario ------------------------------------------------
  
     @RequestMapping(value = "/usuario/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<?> updateUsuario(@PathVariable("id") long id, @RequestBody Usuario usuario) {
+    public ResponseEntity<?> updateUsuario(@PathVariable("id") long id, @RequestBody Usuario usuario) throws UsuarioException {
         
         Usuario currentUsuario = usuarioDAO.findById(id);
  
@@ -82,7 +85,11 @@ public class UsuarioControllerAPI {
              return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
  
-        currentUsuario.setNome(usuario.getNome());
+        try {
+            currentUsuario.setNome(usuario.getNome());
+        } catch (UsuarioException ex) {
+            Logger.getLogger(UsuarioControllerAPI.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         usuarioDAO.save(currentUsuario);
         return new ResponseEntity<>(currentUsuario, HttpStatus.OK);

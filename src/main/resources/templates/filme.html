@@ -51,7 +51,7 @@
                         <th th:text="${filme.id}" scope="row"/>
                         <td th:text="${filme.nome}"/>
                         <td th:text="${filme.estoque}"/>
-                        <td th:text="${filme.precoLocacao}"/>
+                        <td th:text="|R$ ${{filme.precoLocacao}}|"/>
                     </tr>
                 </tbody>
             </table>
