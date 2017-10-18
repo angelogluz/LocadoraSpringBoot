@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import local.locadora.exceptions.FilmeException;
 import org.springframework.format.annotation.NumberFormat;
 
 @Entity
@@ -37,7 +38,10 @@ public class Filme implements Serializable {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(String nome) throws FilmeException {
+        if (nome.equals("")){
+            throw new FilmeException("Não é possível cadastrar um filme sem nome.");
+        }
         this.nome = nome;
     }
 
@@ -45,7 +49,10 @@ public class Filme implements Serializable {
         return estoque;
     }
 
-    public void setEstoque(Integer estoque) {
+    public void setEstoque(Integer estoque)throws FilmeException {
+        if (estoque == null){
+            throw new FilmeException("Não é possível cadastrar um filme sem valor no estoque.");
+        }
         this.estoque = estoque;
     }
 
@@ -53,7 +60,10 @@ public class Filme implements Serializable {
         return precoLocacao;
     }
 
-    public void setPrecoLocacao(Double precoLocacao) {
+    public void setPrecoLocacao(Double precoLocacao)throws FilmeException {
+        if (precoLocacao == null){
+            throw new FilmeException("Não é possível cadastrar um filme sem valor de locação.");
+        }  
         this.precoLocacao = precoLocacao;
     }
 
@@ -92,7 +102,7 @@ public class Filme implements Serializable {
 
     @Override
     public String toString() {
-        return "Filme{" + nome + ", estoque=" + estoque + '}';
+        return nome;
     }
     
 }
