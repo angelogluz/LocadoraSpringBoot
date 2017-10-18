@@ -55,7 +55,7 @@ public class TesteFilmeNovo {
     }
     
     @Test
-    public void FilmeSemNome()throws FilmeSemNomeException{
+    public void naoDeveFilmeSemNome()throws FilmeSemNomeException{
        
         //cenario
         String nome = "";
@@ -75,7 +75,7 @@ public class TesteFilmeNovo {
     }
     
     @Test
-    public void FilmeComNome(){
+    public void naoDeveFilmeComNome(){
         
         String nome = "Macgayver";
         int estoque = 3;
@@ -93,7 +93,7 @@ public class TesteFilmeNovo {
     }
     
     @Test
-    public void FilmeComQuantidade() throws FilmeSemNomeException{
+    public void naoDeveFilmeComQuantidade() throws FilmeSemNomeException{
           String nome = "Macgayver";
         int estoque = 3;
         double valor = 5.5;
@@ -111,7 +111,7 @@ public class TesteFilmeNovo {
     }
     
     @Test
-    public void FilmeSemEstoque() throws FilmeSemEstoqueException{
+    public void naoDeveFilmeSemEstoque() throws FilmeSemEstoqueException{
         String nome = "Macgayver";
         int estoque = 0;
         double valor = 5.5;
@@ -128,7 +128,7 @@ public class TesteFilmeNovo {
     }
     
      @Test
-    public void FilmeSemValor() throws FilmeSemPrecoException{
+    public void naoDeveFilmeSemValor() throws FilmeSemPrecoException{
         String nome = "Macgayver";
         int estoque = 3;
         double valor = 0;
@@ -145,7 +145,7 @@ public class TesteFilmeNovo {
     }
     
        @Test
-    public void FilmeComValor() throws FilmeSemPrecoException{
+    public void naoDeveFilmeComValor() throws FilmeSemPrecoException{
         String nome = "Macgayver";
         int estoque = 3;
         double valor = 5.5;
