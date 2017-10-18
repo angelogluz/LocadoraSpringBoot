@@ -49,8 +49,21 @@ public class UsuarioRepositoryExemploTeste {
     }
 
     @Test
-    public void dd() {
+    public void TestaSeContemCaracterEspeciais() {
+        Usuario usuario1 = new Usuario("Pedro C@nt$relli");
+        Usuario u1 = clientRepository.save(usuario1);
+        Usuario u2 = clientRepository.findByNome("Pedro C@nt$relli");
 
+        assertFalse(u2.getNome().matches("[a-z A-Z]*"));
+    }
+
+    @Test
+    public void TestaSeContemSomenteNumeroNoNome() {
+        Usuario usuario1 = new Usuario("1212 1212");
+        Usuario u1 = clientRepository.save(usuario1);
+        Usuario u2 = clientRepository.findByNome("1212 1212");
+
+        assertTrue(u2.getNome().matches("([0-9]+[ ]*)+"));
     }
 
 }

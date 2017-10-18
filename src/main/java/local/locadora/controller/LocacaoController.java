@@ -87,17 +87,12 @@ public class LocacaoController {
                     break;
                 default:
             }
-            filme.setEstoque(filme.getEstoque()-1);
+            filme.setEstoque(filme.getEstoque() - 1);
             locacao2.addFilme(filme);
             valorTotal += valorFilme;
             //Entrega no dia seguinte
-            Date dataEntrega = new Date();
-            dataEntrega = adicionarDias(dataEntrega, 1);
-            if (DataUtils.verificarDiaSemana(dataEntrega, Calendar.SUNDAY)) {
-                dataEntrega = adicionarDias(dataEntrega, 1);
-            }
-            locacao2.setDataRetorno(dataEntrega);
             
+            setarDataEntrega(new Date(), locacao2);
 
         }
         locacao2.setValor(valorTotal);
@@ -131,5 +126,15 @@ public class LocacaoController {
         usuarioRepository.save(new Usuario("Manoel da Silva"));
         usuarioRepository.save(new Usuario("Josevaldo da Silva "));
 
+    }
+
+    public void setarDataEntrega(Date data, Locacao locacao) {
+        //ADICIONA QUANTIDADE DE DIAS EQUIVALENTE A QUANTIDADE DE FILMES ALUGADOS
+        data = adicionarDias(data, locacao.getFilmes().size());
+        if (DataUtils.verificarDiaSemana(data, Calendar.SUNDAY)) {
+            data = adicionarDias(data, 1);
+        }
+        locacao.setDataRetorno(data);
+        
     }
 }
