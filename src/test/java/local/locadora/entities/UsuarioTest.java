@@ -5,6 +5,7 @@
  */
 package local.locadora.entities;
 
+
 import local.locadora.exceptions.UsuarioException;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -39,16 +40,26 @@ public class UsuarioTest {
     public void tearDown() {
     }
 
+    /**
+     *
+     * @throws UsuarioException
+     * Este parametro serve para fazer o teste de quando o usuario tenta fazer
+     * o cadastro de um novo usuari com nome vazio
+     */
     @Test
-    public void usuarioNomeVazio() throws UsuarioException {
+    public void usuarioNomeVazio() {
         //Cenário
         Usuario usuario = new Usuario();
         
         //Ação
         try {
-            usuario.setNome("");
+            usuario.setNome("44");
             Assert.fail();
-        } catch (UsuarioException e) {
+// faz com que falhe a asserçao de dados sem verificar as condiçoes e
+// exibe a mensagem formatada abaixo
+           
+        } catch (Exception e) {
+            //certifica que a msg exibida é a mesma detalhada no metodo que esta lancando a execeçao
             assertEquals("Não é possível cadastrar um usuário sem nome.", e.getMessage());
         }
     }

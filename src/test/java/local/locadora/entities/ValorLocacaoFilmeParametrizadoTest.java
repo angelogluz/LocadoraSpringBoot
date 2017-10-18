@@ -23,7 +23,10 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class ValorLocacaoFilmeParametrizadoTest {
 
-    
+    /**
+     *a anotacao @parameters especifica os parametros a serem utilizados 
+     * nos testes
+     */
     public ValorLocacaoFilmeParametrizadoTest() {
     }
     
@@ -43,7 +46,9 @@ public class ValorLocacaoFilmeParametrizadoTest {
             {Arrays.asList(filme1, filme2, filme3, filme4, filme5, filme6), 17.0, "Teste locação do sexto filme sem desconto"}
         });
     }
-    
+    /*
+    *a anotacao @parameter instancia uma variavel para o parametro especificado
+    */
     @Parameter(0)
     public List<Filme> filmes;
     @Parameter(1)
@@ -51,9 +56,12 @@ public class ValorLocacaoFilmeParametrizadoTest {
     @Parameter(2)
     public String descricao;
     
+    /**
+     *
+     *Este teste serve para verificar o valor total da locaçao usando os parametros acima
+     */
     @Test
-    public void deveVerificarValorDeDevolucao() throws FilmeSemEstoqueException,
-            LocadoraException {
+    public void deveVerificarValorDeDevolucao() {
         //Cenário
         Locacao locacao = new Locacao();
         //Ação

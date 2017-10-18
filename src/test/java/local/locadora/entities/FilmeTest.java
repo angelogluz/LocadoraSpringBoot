@@ -34,6 +34,12 @@ public class FilmeTest {
     public void tearDown() {
     }
     
+    /**
+     *
+     * @throws FilmeException 
+     * este parametro serve para fazer o teste quando o usuario tenta cadastrar 
+     * um filme sem nome
+     */
     @Test
     public void filmeNomeVazio() throws FilmeException {
         //Cenário
@@ -48,6 +54,12 @@ public class FilmeTest {
         }
     }
     
+    /**
+     *
+     * @throws FilmeException
+     * Este parametro serve para fazer o teste de quando o usuario tenta fazer
+     * o cadastro de um filme sem valor no campo estoque 
+     */
     @Test
     public void filmeEstoqueVazio() throws FilmeException {
         //Cenário
@@ -62,6 +74,12 @@ public class FilmeTest {
         }
     }
 
+    /**
+     *
+     * @throws FilmeException
+     *  Este parametro serve para fazer o teste de quando o usuario tenta fazer
+     * o cadastro de um filme sem valor no campo preco locação 
+     */
     @Test
     public void filmePrecoLocacaoVazio() throws FilmeException {
         //Cenário
