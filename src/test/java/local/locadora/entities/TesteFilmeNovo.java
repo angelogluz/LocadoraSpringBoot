@@ -140,7 +140,7 @@ public class TesteFilmeNovo {
             retorna = filme.setPrecoLocacao(valor);
         
         }catch(FilmeSemPrecoException e){
-              Assert.assertEquals("Filme sem valor", e.getMessage());
+              Assert.assertEquals("Filme sem preço", e.getMessage());
         }
     }
     
