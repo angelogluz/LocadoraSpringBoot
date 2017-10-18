@@ -13,13 +13,8 @@ import org.springframework.ui.Model;
 @Controller
 public class UsuarioController{
 
-    private UsuarioDAO usuarioRepository;
-
     @Autowired
-    public UsuarioController(UsuarioDAO usuarioRepository) {
-        this.usuarioRepository = usuarioRepository;
-        
-    }
+    private UsuarioDAO usuarioRepository;
 
     @GetMapping("/usuario")
     //@ResponseBody
@@ -30,10 +25,8 @@ public class UsuarioController{
     
     @PostMapping("/usuario")
     //@ResponseBody
-    public void save(Usuario usuario, Model model) throws UsuarioException {
-        if (usuario.getNome().equals("")){
-            throw new UsuarioException("Impossivel salvar usuario sem nome");
-        }
+    public void save(Usuario usuario, Model model) {
+        System.out.println(usuario.getNome());
         usuarioRepository.save(usuario);
         list(model);
     }
