@@ -26,16 +26,28 @@ public class Usuario implements Serializable {
     }
 
     public String setNome(String nome) throws UsuarioException {
+
         if (nome.equals("")) {
             throw new UsuarioException("Usuario sem nome");
         }
         if (NumberUtils.isNumeric(nome) == true) {
             throw new UsuarioException("Usuario com numero no nome");
         }
+
+        char ch = nome.charAt(0);
+
+        if (Character.isUpperCase(ch) == false) {
+            ch = Character.toUpperCase(ch);
+            char subnome[] = nome.toCharArray();
+            subnome[0] = ch;
+            nome = new String(subnome);
+        }
+        
         this.nome = nome;
-        return "Ok";
+        System.out.println(nome);
+        return nome;
     }
-    
+
     public void setId(Long id) {
         this.id = id;
     }
