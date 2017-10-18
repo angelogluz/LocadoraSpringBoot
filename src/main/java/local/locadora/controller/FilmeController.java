@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 @Controller
 public class FilmeController {
 
-    private FilmeDAO filmeRepository;
+    private final FilmeDAO filmeRepository;
 
     @Autowired
     public FilmeController(FilmeDAO alunoRepository) {
@@ -32,5 +32,5 @@ public class FilmeController {
         filmeRepository.save(filme);
         list(model);
     }
- 
+  
 }
