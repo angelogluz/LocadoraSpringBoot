@@ -15,17 +15,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
 
-	@Override
+    @Override
     public void addFormatters(FormatterRegistry formatterRegistry) {
         formatterRegistry.addFormatter(new UsuarioFormatter());
         formatterRegistry.addFormatter(new FilmeFormatter());
     }
-       @Override
+    @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-      //  registry.addViewController("/home").setViewName("home");
-     //   registry.addViewController("/").setViewName("home");
-     //   registry.addViewController("/hello").setViewName("hello");
-           registry.addViewController("/index").setViewName("pages/index");
+        //  registry.addViewController("/home").setViewName("home");
+        //   registry.addViewController("/").setViewName("home");
+        registry.addViewController("/index").setViewName("pages/index");
         registry.addViewController("/login").setViewName("login");
     }
 }

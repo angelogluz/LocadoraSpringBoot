@@ -18,14 +18,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+
+
         http.csrf().disable()
                 .authorizeRequests()
-                //Aqui define páginas que não precisam autenticar
                 .antMatchers("/filme").permitAll()
-               // .antMatchers("/filme/**").hasAnyRole("ADMIN")
-                .antMatchers("/locacao/**").hasAnyRole("ADMIN")
-                .antMatchers("/usuario/**").hasAnyRole("ADMIN")
-                .anyRequest().authenticated()
+                .antMatchers("/login*").permitAll()
+                .antMatchers("/locacao").hasAnyRole("ADMIN")
+                .antMatchers("/usuario").hasAnyRole("ADMIN")
+             //   .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")

@@ -11,19 +11,20 @@ import org.springframework.ui.Model;
 @Controller
 public class FilmeController {
 
+    @Autowired
     private final FilmeDAO filmeRepository;
 
-    @Autowired
+
     public FilmeController(FilmeDAO alunoRepository) {
         this.filmeRepository = alunoRepository;
         
     }
 
-    @GetMapping({"/filme"})
+    @GetMapping({"/filme","/"})
     //@ResponseBody
     public String list(Model model) {
         model.addAttribute("filmes",filmeRepository.findAll());
-        return "filme";
+        return "pages/tables";
     }
     
     @PostMapping("/filme")

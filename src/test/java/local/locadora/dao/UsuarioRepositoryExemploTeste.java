@@ -1,14 +1,21 @@
 package local.locadora.dao;
 
+import local.locadora.LocadoraApplication;
+import local.locadora.controller.FilmeFormatter;
+import local.locadora.controller.UsuarioFormatter;
 import local.locadora.entities.Usuario;
+
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
@@ -29,7 +36,7 @@ public class UsuarioRepositoryExemploTeste {
         Usuario usuario = new Usuario("Foo");
         Usuario u1 = clientRepository.save(usuario);
         Usuario u = clientRepository.findById(u1.getId()).get();
-        assertEquals("Foo", u.getNome());
+        assertThat(u.getNome(),is("Foo"));
     }
 
     @Test

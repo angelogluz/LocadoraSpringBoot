@@ -29,7 +29,7 @@
                 <button type="submit" class="btn btn-primary">Salvar</button>
             </form>
         </div>
-
+    <!--/*@thymesVar id="filmes" type="local.locadora.controller.FilmeController"*/-->
         <div th:unless="${#lists.isEmpty(filmes)}">
             <table class="table">
                 <thead>
@@ -41,8 +41,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="filme : ${filmes}" >
-                        <th th:text="${filme.id}" scope="row"/>
+
+
+                <tr th:each="filme : ${filmes}">
+                    <!--/*@thymesVar id="filme" type="local.locadora.entities.Filme"*/-->
+                    <th th:text="${filme.id}" scope="row"/>
                         <td th:text="${filme.nome}"/>
                         <td th:text="${filme.estoque}"/>
                         <td th:text="${filme.precoLocacao}"/>
