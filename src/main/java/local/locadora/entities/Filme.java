@@ -25,7 +25,16 @@ public class Filme implements Serializable {
     public Filme() {
     }
 
-    public Filme(String nome, Integer estoque, Double precoLocacao) {
+    public Filme(String nome, Integer estoque, Double precoLocacao) throws Exception {
+        if (nome.trim().equals("")) {
+            throw new Exception("Não é possível cadastrar filme sem nome!");
+        }
+        if (estoque <= 0) {
+            throw new Exception("Não é possível o estoque ser menor que zero!");
+        }
+        if (precoLocacao <= 0) {
+            throw new Exception("Não é possível o preco ser menor que zero!");
+        }
         this.nome = nome;
         this.estoque = estoque;
         this.precoLocacao = precoLocacao;

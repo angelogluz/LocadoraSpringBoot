@@ -15,7 +15,10 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(String nome) {
+    public Usuario(String nome) throws Exception {
+        if (nome.trim().equals("")) {
+            throw new Exception("Não é possível cadastrar usuário sem nome!");
+        }
         this.nome = nome;
     }
 
