@@ -30,6 +30,10 @@ import org.springframework.ui.Model;
  *
  * @author Pedro Cantarelli
  */
+
+//TESTE PARA VERIFICAR SE É ADICIONADO OS DIAS DE LOCACAO EQUIVALENTE A
+//QUANTIDADE DE FILMES LOCADOS
+
 @RunWith(Parameterized.class)
 public class LocacaoControlerTest {
 
@@ -41,12 +45,13 @@ public class LocacaoControlerTest {
 
     @Parameterized.Parameters(name = "{2}")
     public static List<Object[]> parametrosDeExecucao() {
-
+        //PARAMETRIZAÇÃO DE FILMES
         Filme filme1 = new Filme("Filme 01", 4, 2.0);
         Filme filme2 = new Filme("Filme 02", 4, 2.0);
         Filme filme3 = new Filme("Filme 03", 4, 2.0);
         Filme filme4 = new Filme("Filme 04", 4, 2.0);
 
+        //CRIANDO VARIAS LOCACOES DESDE LOCANDO 1 FILME ATÉ 4 FILMES
         Locacao locacao1 = new Locacao();
         locacao1.addFilme(filme1);
         locacao1.setUsuario(new Usuario("Pedro"));
@@ -87,6 +92,9 @@ public class LocacaoControlerTest {
     @Parameter(2)
     public String descricao;
 
+    
+    //EXECUTA O TESTE. SE O DIA FOR NO DOMINGO O ERRO VAI OCORRER POIS NO TESTE
+    //NAO ESTA SENDO SETADO +1. NO SISTEMA ESTA CORRETO
     @Test
     public void deveVerificarDataDeDevolucao() throws FilmeSemEstoqueException,
             LocadoraException {

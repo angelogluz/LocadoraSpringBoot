@@ -34,17 +34,20 @@ public class UsuarioTest {
 
         assertEquals(u1.getClass(), u2.getClass());
     }
-    
+    //Testa se contém apenas números no campo do nome
     @Test
-    public void TestaSeContemSomenteNumeroNoNome(){
+    public void naoDeveConterSomenteNumeroNoNome(){
+        //Declaração de usuario
         Usuario u1 = new Usuario("1212 1212");
-        assertTrue(u1.getNome().matches("([0-9]+[ ]*)+"));
+        assertFalse(u1.getNome().matches("([0-9]+[ ]*)+"));
     }
         
+    
+    //Testa se contem Caracteres especiais
     @Test
-    public void TestaSeContemCaracterEspeciais(){
+    public void naoDeveContemCaracterEspeciais(){
         Usuario u1 = new Usuario("Pedro C@nt$relli");
-        assertFalse(u1.getNome().matches("[a-z A-Z]*"));
+        assertTrue(u1.getNome().matches("[a-z A-Z]*"));
     }
     
 }

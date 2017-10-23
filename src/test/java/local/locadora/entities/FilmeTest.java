@@ -19,6 +19,7 @@ import org.junit.Ignore;
  */
 public class FilmeTest {
 
+    //NAO DEVE ACEITAR ESTOQUE NEGATIVO
     @Test
     public void naoAceitarEstoqueNegativo() {
         Filme filme = new Filme("Teste teste", 2, 2.50);
@@ -26,7 +27,7 @@ public class FilmeTest {
         assertTrue(filme.getEstoque() > 0);
     }
 
-    @Ignore
+    //NAO ACEITAR PREÇO DE LOCAÇÃO NEGATIVO
     @Test
     public void naoAceitarPrecoLocacaoNegativo() {
         Filme filme = new Filme("Teste teste", 2, -2.50);
@@ -34,7 +35,7 @@ public class FilmeTest {
         assertTrue(filme.getPrecoLocacao() > 0);
     }
 
-    @Ignore
+    //NAO ACEITAR SOMENTE ESPAÇO NO NOME
     @Test
     public void naoAceitarSomenteEspacoNoNome() {
         Filme filme = new Filme(" ", 2, 2.50);

@@ -26,16 +26,17 @@ public class FilmeRepositoryTeste {
     }
     
     
+    //TESTE QUE NAO DEVE ACEITAR FILME COM ESTOQUE NEGATIVO
     @Test
     public void naoAceitarEstoqueNegativo() {
-        Filme filme = new Filme("Teste teste", 2, 2.50);
+        Filme filme = new Filme("Teste teste", 2, -2.50);
         Filme f1 = clientRepository.save(filme);
         Filme f2 = clientRepository.findById(f1.getId());
                    
         assertTrue(f2.getEstoque() > 0);
     }
-    
-    @Ignore
+   
+    //TESTE QUE NAO DEVE ACEITAR FILME COM PREÇO DE LOCACAO NEGATIVA
     @Test
     public void naoAceitarPrecoLocacaoNegativo() {
         Filme filme = new Filme("Teste teste", 2, -2.50);
@@ -43,8 +44,8 @@ public class FilmeRepositoryTeste {
         Filme f2 = clientRepository.findById(f1.getId());
         assertTrue(f2.getPrecoLocacao() > 0);
     }
-
-    @Ignore
+    
+    //TESTE QUE NAO DEVE ACEITAR NOME DO FILME SÓ COM ESPAÇOS
     @Test
     public void naoAceitarSomenteEspacoNoNome() {
         Filme filme = new Filme(" ", 2, 2.50);

@@ -48,22 +48,24 @@ public class UsuarioRepositoryExemploTeste {
         assertEquals(usuario.getNome(), u.getNome());
     }
 
+    //NAO DEVE CONTER CARACTERES ESPECIAIS
     @Test
-    public void TestaSeContemCaracterEspeciais() {
+    public void naoDeveConterCaracterEspeciais() {
         Usuario usuario1 = new Usuario("Pedro C@nt$relli");
         Usuario u1 = clientRepository.save(usuario1);
         Usuario u2 = clientRepository.findByNome("Pedro C@nt$relli");
 
-        assertFalse(u2.getNome().matches("[a-z A-Z]*"));
+        assertTrue(u2.getNome().matches("[a-z A-Z]*"));
     }
 
+    //NAO DEVE CONTER SOMENTE NUMERO NO NOME
     @Test
-    public void TestaSeContemSomenteNumeroNoNome() {
+    public void naoDeveConterSomenteNumeroNoNome() {
         Usuario usuario1 = new Usuario("1212 1212");
         Usuario u1 = clientRepository.save(usuario1);
         Usuario u2 = clientRepository.findByNome("1212 1212");
 
-        assertTrue(u2.getNome().matches("([0-9]+[ ]*)+"));
+        assertFalse(u2.getNome().matches("([0-9]+[ ]*)+"));
     }
 
 }

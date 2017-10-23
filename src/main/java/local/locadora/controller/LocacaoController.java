@@ -128,8 +128,8 @@ public class LocacaoController {
 
     }
 
+     //ADICIONA QUANTIDADE DE DIAS EQUIVALENTE A QUANTIDADE DE FILMES ALUGADOS
     public void setarDataEntrega(Date data, Locacao locacao) {
-        //ADICIONA QUANTIDADE DE DIAS EQUIVALENTE A QUANTIDADE DE FILMES ALUGADOS
         data = adicionarDias(data, locacao.getFilmes().size());
         if (DataUtils.verificarDiaSemana(data, Calendar.SUNDAY)) {
             data = adicionarDias(data, 1);
