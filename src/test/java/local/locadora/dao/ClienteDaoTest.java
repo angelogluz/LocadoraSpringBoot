@@ -43,7 +43,7 @@ public class ClienteDaoTest {
         clienteRepository.save(cliente);
 
         Cliente c = clienteRepository.findByNome("Vargas");
-        assertThat(c, is("Vargas"));
+        assertThat(c.getNome(), is("Vargas"));
     }
 
     @Test
@@ -53,7 +53,7 @@ public class ClienteDaoTest {
         clienteRepository.save(cliente);
 
         Cliente c = clienteRepository.findByNome("Anamelia");
-        assertThat(c, is("Anamelia"));
+        assertThat(c.getNome(), is("Anamelia"));
     }
 
 
