@@ -51,4 +51,16 @@ public class ClienteControllerTest {
             clienteRepository.findByNome("Is");
             fail();
         }
+        
+        @Test(expected = ConstraintViolationException.class)
+        public void testControllerDevePersistirCpfSemFormatacao() {
+            Cliente user = new Cliente();
+            user.setNome("Vinicius");
+            user.setCpf("014.035.510-30");
+            controller.save(user,bind,flash);
+            clienteRepository.findByCpf("01403551030");
+            fail();
+        }
+        
+        
 }
