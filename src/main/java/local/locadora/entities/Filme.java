@@ -1,32 +1,41 @@
 package local.locadora.entities;
 
 
+import com.sun.xml.internal.ws.dump.MessageDumping;
+import org.springframework.validation.annotation.Validated;
+
 import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 @Entity
+@Validated
 public class Filme implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column
+
+    @Column(unique = true)
+    @Size(min = 2, max = 100, message = "Um filme deve possuir entre 2 e 100 caracteres")
     private String nome; 
     @Column
+    @Min(value = 0, message = "O Estoque deve ser positivo")
     private Integer estoque;
     @Column
+    @Digits(integer=2, fraction=2,message = "O Preço deve ter no máximo dois dígitos")
+    @Positive(message = "O Valor da locação deve ser positivo")
     private Double precoLocacao;
 
     public Filme() {
     }
 
     public Filme(String nome, Integer estoque, Double precoLocacao) {
-        this.nome = nome;
+        this.nome = nome.trim();
         this.estoque = estoque;
         this.precoLocacao = precoLocacao;
     }
@@ -36,7 +45,7 @@ public class Filme implements Serializable {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.nome = nome.trim();
     }
 
     public Integer getEstoque() {
@@ -90,7 +99,7 @@ public class Filme implements Serializable {
 
     @Override
     public String toString() {
-        return "Filme{" + nome + ", estoque=" + estoque + '}';
+        return nome + " - Estoque:" + estoque;
     }
     
 }

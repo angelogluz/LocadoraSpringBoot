@@ -1,40 +1,58 @@
 package local.locadora.entities;
 
+import org.springframework.validation.annotation.Validated;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
+@Validated
 public class Locacao implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private Usuario usuario;
+    @OneToOne
+    @JoinColumn
+    @NotNull(message = "Um cliente deve ser selecionado")
+    private Cliente cliente;
     @ManyToMany
+    @Column
+    @NotNull(message = "Pelo menos um filme deve ser selecionado")
+    @NotEmpty(message = "Pelo menos um filme deve ser selecionado")
     private List<Filme> filmes;
-    
-    @Temporal(TemporalType.DATE)
+    @NotNull(message = "A data de locação não deve ser nula")
+    @NotEmpty(message = "A data de locação não deve ser nula")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataLocacao;
-    @Temporal(TemporalType.DATE)
+    @NotNull(message = "A data de retorno não deve ser nula")
+    @NotEmpty(message = "A data de retorno não deve ser nula")
+    @Temporal(TemporalType.TIMESTAMP)
+    @Future(message = "A data deve retorno deve ser futura")
     private Date dataRetorno;
+    @Digits(integer=2, fraction=2,message = "O Preço deve ter no máximo dois dígitos")
+    @Positive(message = "O valor da locação deve ser positivo")
     private Double valor;
-    
+
 
     public Locacao() {
+        cliente=new Cliente();
         filmes = new ArrayList<>();
         valor = 0d;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Date getDataLocacao() {
@@ -63,6 +81,18 @@ public class Locacao implements Serializable {
 
     public List<Filme> getFilmes() {
         return filmes;
+    }
+
+
+    public String getListaFilmes() {
+        String print = "";
+        for (int i = 0; i<filmes.size()-1; i++){
+            print+=(filmes.get(i).getNome()+", ");
+        }
+        if(filmes.size()>0){
+            print+=(filmes.get(filmes.size()-1).getNome());
+        }
+return print;
     }
 
     public void addFilme(Filme filme) {

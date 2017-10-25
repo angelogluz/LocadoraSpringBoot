@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.webjars:jquery:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery/unknown/jquery-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery/unknown/jquery-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/webjars/jquery/unknown/jquery-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

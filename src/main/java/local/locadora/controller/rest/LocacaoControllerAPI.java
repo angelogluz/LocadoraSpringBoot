@@ -85,7 +85,7 @@ public class LocacaoControllerAPI {
         currentLocacao.setDataLocacao(locacao.getDataLocacao());
         currentLocacao.setDataRetorno(locacao.getDataRetorno());
         currentLocacao.setFilmes(locacao.getFilmes());
-        currentLocacao.setUsuario(locacao.getUsuario());
+        currentLocacao.setCliente(locacao.getCliente());
         
         locacaoDAO.save(currentLocacao);
         return new ResponseEntity<>(currentLocacao, HttpStatus.OK);

@@ -9,12 +9,15 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.validation.Valid;
+
 import local.locadora.dao.FilmeDAO;
 import local.locadora.dao.LocacaoDAO;
-import local.locadora.dao.UsuarioDAO;
+import local.locadora.dao.ClienteDAO;
+
 import local.locadora.entities.Filme;
 import local.locadora.entities.Locacao;
-import local.locadora.entities.Usuario;
+import local.locadora.entities.Cliente;
 import local.locadora.exceptions.FilmeSemEstoqueException;
 import local.locadora.exceptions.LocadoraException;
 import local.locadora.utils.DataUtils;
@@ -22,8 +25,12 @@ import static local.locadora.utils.DataUtils.adicionarDias;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  *
@@ -39,7 +46,20 @@ public class LocacaoController {
     private FilmeDAO filmeRepository;
 
     @Autowired
-    private UsuarioDAO usuarioRepository;
+    private ClienteDAO clienteRepository;
+
+    public LocacaoController() {
+    }
+
+    public LocacaoController(LocacaoDAO locacaoDAO){
+        this.locacaoRepository = locacaoDAO;
+    }
+
+    public LocacaoController(LocacaoDAO locacaoDAO, FilmeDAO filmeDAO, ClienteDAO clienteDAO){
+        this.locacaoRepository = locacaoDAO;
+        this.filmeRepository = filmeDAO;
+        this.clienteRepository = clienteDAO;
+    }
 
     @GetMapping({"/locacao"})
     //@ResponseBody
@@ -49,75 +69,100 @@ public class LocacaoController {
 
         model.addAttribute("locacao", new Locacao());
 
-        model.addAttribute("usuarios", usuarioRepository.findAll());
+        model.addAttribute("clientes", clienteRepository.findAll());
 
         model.addAttribute("locacoes", locacaoRepository.findAll());
-        return "locacao";
+        return "pages/locacao";
     }
 
     @PostMapping({"/locacao"})
-    public Locacao alugarFilme(Locacao locacao, Model model) throws FilmeSemEstoqueException, LocadoraException {
-        Usuario usuario = locacao.getUsuario();
-        locacao.setDataLocacao(new Date());
-        List<Filme> filmes = locacao.getFilmes();
+    public ModelAndView alugarFilme(Locacao locacao, BindingResult bindingResult, RedirectAttributes flash) throws FilmeSemEstoqueException, LocadoraException {
+        ModelAndView view = new ModelAndView();
+        try {
+            Cliente cliente = locacao.getCliente();
+            locacao.setDataLocacao(new Date());
+            List<Filme> filmes = locacao.getFilmes();
 
-        if (usuario == null) {
-            throw new LocadoraException("Impossivel locar sem um usuário");
-        }
-        if (filmes == null) {
-            throw new LocadoraException("Nenhum filme foi selecionado");
-        }
-        Locacao locacao2 = new Locacao();
-        Double valorTotal = 0d;
-        for (int i = 0; i < filmes.size(); i++) {
-            Filme filme = filmes.get(i);
-            if (filme.getEstoque() == 0) {
-                throw new FilmeSemEstoqueException("Filme sem estoque");
+            if (cliente == null) {
+                throw new LocadoraException("Impossivel locar sem um cliente");
             }
-            double valorFilme = filme.getPrecoLocacao();
-            switch (i) {
-                case 2:
-                    valorFilme = valorFilme * 0.75;
-                    break;
-                case 3:
-                    valorFilme = valorFilme * 0.50;
-                    break;
-                case 4:
-                    valorFilme = 0;
-                    break;
-                default:
+            if (filmes == null) {
+                throw new LocadoraException("Nenhum filme foi selecionado");
             }
-            filme.setEstoque(filme.getEstoque()-1);
-            locacao2.addFilme(filme);
-            valorTotal += valorFilme;
-            //Entrega no dia seguinte
-            Date dataEntrega = new Date();
-            dataEntrega = adicionarDias(dataEntrega, 1);
-            if (DataUtils.verificarDiaSemana(dataEntrega, Calendar.SUNDAY)) {
-                dataEntrega = adicionarDias(dataEntrega, 1);
+           // Locacao locacao2 = new Locacao();
+            Double valorTotal = 0d;
+            for (int i = 0; i < filmes.size(); i++) {
+                Filme filme = filmes.get(i);
+                if (filme.getEstoque() == 0) {
+                    throw new FilmeSemEstoqueException("Filme sem estoque");
+                }
+                double valorFilme = filme.getPrecoLocacao();
+                switch (i) {
+                    case 2:
+                        valorFilme = valorFilme * 0.75;
+                        break;
+                    case 3:
+                        valorFilme = valorFilme * 0.50;
+                        break;
+                    case 4:
+                        valorFilme = 0;
+                        break;
+                    default:
+                }
+                filme.setEstoque(filme.getEstoque() - 1);
+                //locacao2.addFilme(filme);
+                valorTotal += valorFilme;
+                //Entrega no dia seguinte
+                Date dataEntrega = new Date();
+                dataEntrega = adicionarDias(dataEntrega, filmes.size());
+                if (DataUtils.verificarDiaSemana(dataEntrega, Calendar.SUNDAY)) {
+                    dataEntrega = adicionarDias(dataEntrega, 1);
+                }
+                locacao.setDataRetorno(dataEntrega);
+
+
             }
-            locacao2.setDataRetorno(dataEntrega);
-            
+            locacao.setValor(valorTotal);
+            locacao.setCliente(cliente);
+            locacao.setDataLocacao(new Date());
 
+            if (bindingResult.hasErrors()) {
+                return new ModelAndView("redirect/locacao");
+
+            } else {
+
+                locacaoRepository.save(locacao);
+                flash.addFlashAttribute("sucessmessage", "Locação realizado com sucesso");
+                if (view != null) {
+                    view.addObject("todosFilmes", filmeRepository.findByEstoqueGreaterThan(0));
+
+                    view.addObject("locacao", new Locacao());
+
+                    view.addObject("clientes", clienteRepository.findAll());
+
+                    view.addObject("locacoes", locacaoRepository.findAll());
+                }}
+            view.setViewName("pages/locacao");
+
+            }catch(Exception ex){
+                flash.addFlashAttribute("errormessage", "Um erro inesperado ocorreu. Provavelmente nenhum filme foi" +
+                        " selecionado para locacação");
+            view.setViewName("redirect:/locacao");
+            }
+
+            return view;
         }
-        locacao2.setValor(valorTotal);
-        locacao2.setUsuario(usuario);
-        locacao2.setDataLocacao(new Date());
 
-        // Desenvolver a persistência
-        locacaoRepository.save(locacao2);
+    public LocacaoDAO getLocacaoRepository() {
+        return locacaoRepository;
+    }
 
-        if (model != null) {
-            model.addAttribute("todosFilmes", filmeRepository.findByEstoqueGreaterThan(0));
+    public FilmeDAO getFilmeRepository() {
+        return filmeRepository;
+    }
 
-            model.addAttribute("locacao", new Locacao());
-
-            model.addAttribute("usuarios", usuarioRepository.findAll());
-
-            model.addAttribute("locacoes", locacaoRepository.findAll());
-        }
-
-        return locacao2;
+    public ClienteDAO getClienteRepository() {
+        return clienteRepository;
     }
 
     @PostConstruct
@@ -127,9 +172,10 @@ public class LocacaoController {
         filmeRepository.save(new Filme("Os Vingadores", 4, 4.0));
         filmeRepository.save(new Filme("Um drink no inferno", 3, 4.0));
         filmeRepository.save(new Filme("A espera de um milagre", 8, 4.0));
-        usuarioRepository.save(new Usuario("Angelo Luz"));
-        usuarioRepository.save(new Usuario("Manoel da Silva"));
-        usuarioRepository.save(new Usuario("Josevaldo da Silva "));
+        clienteRepository.save(new Cliente("Angelo Luz"));
+        clienteRepository.save(new Cliente("Mussum"));
+        clienteRepository.save(new Cliente("Axl Rose"));
+
 
     }
 }

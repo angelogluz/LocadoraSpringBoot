@@ -1,20 +1,30 @@
 package local.locadora.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import javax.sql.DataSource;
+
 
 @Configuration
 // http://docs.spring.io/spring-boot/docs/current/reference/html/howto-security.html
 // Switch off the Spring Boot security configuration
-//@EnableWebSecurity
+@EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
-    // roles admin allow to access /admin/**
+
     // custom 403 access denied handler
+
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
@@ -22,10 +32,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/filme").permitAll()
+                .antMatchers("/filme*").permitAll()
                 .antMatchers("/login*").permitAll()
                 .antMatchers("/locacao").hasAnyRole("ADMIN")
-                .antMatchers("/usuario").hasAnyRole("ADMIN")
+                .antMatchers("/cliente").hasAnyRole("ADMIN")
              //   .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -36,11 +46,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
     }
 
+
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
+
         auth.inMemoryAuthentication()
                 .withUser("admin").password("password").roles("ADMIN");
+
     }
 
 

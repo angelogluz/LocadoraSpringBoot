@@ -52,7 +52,6 @@ $.extend( true, DataTable.defaults, {
 	renderer: 'bootstrap'
 } );
 
-
 /* Default class modification */
 $.extend( DataTable.ext.classes, {
 	sWrapper:      "dataTables_wrapper form-inline dt-bootstrap",

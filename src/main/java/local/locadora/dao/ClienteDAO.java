@@ -5,7 +5,7 @@
  */
 package local.locadora.dao;
 
-import local.locadora.entities.Usuario;
+import local.locadora.entities.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,10 +14,10 @@ import org.springframework.stereotype.Repository;
  * @author angelogl
  */
 @Repository
-public interface UsuarioDAO extends JpaRepository<Usuario, Long> {
+public interface ClienteDAO extends JpaRepository<Cliente, Long> {
 
-    Usuario findByNome(String nome);
+    Cliente findByNome(String nome);
 
-
-    boolean existsById(Usuario Usuario);
+    Cliente findByCpf(String cpf);
+    boolean existsById(Cliente Usuario);
 }
