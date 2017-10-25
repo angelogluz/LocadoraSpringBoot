@@ -65,7 +65,7 @@ public class FilmeTest {
 
     @Test
     public void naoAceitarEstoqueNegativo() {
-        Filme filme = new Filme("Teste teste", 2, 2.50);
+        Filme filme = new Filme("FilmeTeste", 2, 2.50);
 
         assertTrue(filme.getEstoque() > 0);
     }
