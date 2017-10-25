@@ -11,25 +11,21 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.ConstraintViolationException;
 
 import static org.assertj.core.api.Fail.fail;
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 public class ClienteDaoTest {
 
-
-        @Autowired
-        ClienteDAO clienteRepository;
-
+    @Autowired
+    ClienteDAO clienteRepository;
 
     @Test(expected = ConstraintViolationException.class)
     public void testControllerInserindoClienteComMinimoAceitavelDeCaracteresNoNome() {
@@ -40,4 +36,41 @@ public class ClienteDaoTest {
         fail("Não deveria ter persistido o nome com 3 caracteres");
     }
 
+    @Test
+    public void cpfNaoObrigatorioMasPreenchidoExibeMensagemNaoEValido() {
+        Cliente user = new Cliente();
+        user.setNome("Luiz");
+        user.setCpf("123.456.789-07");
+        clienteRepository.save(user);
+        fail("O CPF não é valido");
+
+    }
+
+    @Test
+    public void naoDeveConterCaracterEspeciais() {
+        Cliente user = new Cliente("Lu!z Zun!n@");
+        Cliente c1 = clienteRepository.save(user);
+        Cliente c2 = clienteRepository.findByNome("Lu!z Zun!n@");
+
+        assertTrue(c2.getNome().matches("[a-z A-Z]*"));
+    }
+
+    @Test
+
+    public void naoDeveConterNumeroNoNome() {
+        Cliente user = new Cliente("1212 1212");
+        Cliente c1 = clienteRepository.save(user);
+        Cliente c2 = clienteRepository.findByNome("1212 1212");
+
+        assertFalse(c2.getNome().matches("([0-9]+[ ]*)+"));
+    }
+
+    @Test
+    public void testClienteComNomeEmBranco() {
+        try {
+            Cliente user = new Cliente("");
+        } catch (Exception e) {
+            assertEquals(e.getMessage(), "Não é possível cadastrar usuário sem nome!");
+        }
+    }
 }
