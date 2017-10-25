@@ -1,6 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org"
-      lang="pt-br"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      lang="pt-br">
 <head>
 
     <meta charset="utf-8">
@@ -70,13 +70,17 @@
 
                 <ul class="dropdown-menu dropdown-user">
 
-                    <li sec:authorize="isAuthenticated()"><i class="fa fa-user fa-fw"></i> <span sec:authentication="name"></span></a>
+                    <li sec:authorize="isAuthenticated()"><i class="fa fa-user fa-fw"></i> <span
+                            sec:authentication="name"></span></a>
                     </li>
-                    <li sec:authorize="isAuthenticated()"><i class="fa fa-gear fa-fw"> </i> <span sec:authentication="principal.authorities"></span></a></li>
+                    <li sec:authorize="isAuthenticated()"><i class="fa fa-gear fa-fw"> </i> <span
+                            sec:authentication="principal.authorities"></span></a></li>
                     <li class="divider"></li>
-                    <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                    <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><i class="fa fa-sign-out fa-fw"></i>
+                        Sair</a>
                     </li>
-                    <li sec:authorize="!isAuthenticated()"><a th:href="@{/login}"><i class="fa fa-sign-in fa-fw"></i> Logar</a>
+                    <li sec:authorize="!isAuthenticated()"><a th:href="@{/login}"><i class="fa fa-sign-in fa-fw"></i>
+                        Logar</a>
                     </li>
 
                 </ul>
@@ -87,7 +91,7 @@
         </ul>
         <!-- /.navbar-top-links -->
 
-        <div class="navbar-default sidebar" role="navigation" >
+        <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
@@ -122,11 +126,11 @@
     </nav>
 
 
-
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: darkgray;" sec:authorize="isAuthenticated()">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color: darkgray;"
+         sec:authorize="isAuthenticated()">
 
         <a class="nav-link" href="/cliente">Cliente</a>
-        <a class="nav-link"  href="/filme">Filme</a>
+        <a class="nav-link" href="/filme">Filme</a>
         <a class="nav-link" href="/locacao">Locação</a>
         <a class="nav-link" th:href="@{/logout}">Sair</a>
 

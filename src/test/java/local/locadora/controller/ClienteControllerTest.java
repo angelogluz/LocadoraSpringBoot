@@ -14,7 +14,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import javax.validation.ConstraintViolationException;
+
 import static org.junit.Assert.fail;
 
 @RunWith(SpringRunner.class)
@@ -22,33 +24,33 @@ import static org.junit.Assert.fail;
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 public class ClienteControllerTest {
 
-        @Mock
-        Model model;
+    @Mock
+    Model model;
 
-        @Mock
-        RedirectAttributes flash;
+    @Mock
+    RedirectAttributes flash;
 
-        @Mock
-        BindingResult bind;
+    @Mock
+    BindingResult bind;
 
-        @Mock
-        ClienteController controller;
+    @Mock
+    ClienteController controller;
 
-        @Autowired
-        ClienteDAO clienteRepository;
+    @Autowired
+    ClienteDAO clienteRepository;
 
-        @Before
-        public void setup(){
-            controller = new ClienteController(clienteRepository);
-        }
+    @Before
+    public void setup() {
+        controller = new ClienteController(clienteRepository);
+    }
 
-        @Test(expected = ConstraintViolationException.class)
-        public void testControllerNaoDevePersistirComMenosDeQuatroCaracteres() {
-            Cliente user = new Cliente();
-            user.setNome("Is");
-            user.setCpf("014.035.510-30");
-            controller.save(user,bind,flash);
-            clienteRepository.findByNome("Is");
-            fail();
-        }
+    @Test(expected = ConstraintViolationException.class)
+    public void testControllerNaoDevePersistirComMenosDeQuatroCaracteres() {
+        Cliente user = new Cliente();
+        user.setNome("Is");
+        user.setCpf("014.035.510-30");
+        controller.save(user, bind, flash);
+        clienteRepository.findByNome("Is");
+        fail();
+    }
 }

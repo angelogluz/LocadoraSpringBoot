@@ -1,21 +1,17 @@
 package local.locadora.entities;
 
 import org.hibernate.validator.constraints.br.CPF;
-import org.springframework.validation.BindException;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
 import javax.persistence.*;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Entity
 @Validated
-public class Cliente implements Serializable  {
+public class Cliente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -57,12 +53,12 @@ public class Cliente implements Serializable  {
         this.nome = nome.trim();
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override

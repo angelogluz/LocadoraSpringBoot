@@ -5,35 +5,32 @@
  */
 package local.locadora.controller;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import javax.annotation.PostConstruct;
-import javax.validation.Valid;
-
+import local.locadora.dao.ClienteDAO;
 import local.locadora.dao.FilmeDAO;
 import local.locadora.dao.LocacaoDAO;
-import local.locadora.dao.ClienteDAO;
-
+import local.locadora.entities.Cliente;
 import local.locadora.entities.Filme;
 import local.locadora.entities.Locacao;
-import local.locadora.entities.Cliente;
 import local.locadora.exceptions.FilmeSemEstoqueException;
 import local.locadora.exceptions.LocadoraException;
 import local.locadora.utils.DataUtils;
-import static local.locadora.utils.DataUtils.adicionarDias;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.annotation.PostConstruct;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import static local.locadora.utils.DataUtils.adicionarDias;
+
 /**
- *
  * @author angelogl
  */
 @Controller
@@ -51,11 +48,11 @@ public class LocacaoController {
     public LocacaoController() {
     }
 
-    public LocacaoController(LocacaoDAO locacaoDAO){
+    public LocacaoController(LocacaoDAO locacaoDAO) {
         this.locacaoRepository = locacaoDAO;
     }
 
-    public LocacaoController(LocacaoDAO locacaoDAO, FilmeDAO filmeDAO, ClienteDAO clienteDAO){
+    public LocacaoController(LocacaoDAO locacaoDAO, FilmeDAO filmeDAO, ClienteDAO clienteDAO) {
         this.locacaoRepository = locacaoDAO;
         this.filmeRepository = filmeDAO;
         this.clienteRepository = clienteDAO;
@@ -89,7 +86,7 @@ public class LocacaoController {
             if (filmes == null) {
                 throw new LocadoraException("Nenhum filme foi selecionado");
             }
-           // Locacao locacao2 = new Locacao();
+            // Locacao locacao2 = new Locacao();
             Double valorTotal = 0d;
             for (int i = 0; i < filmes.size(); i++) {
                 Filme filme = filmes.get(i);
@@ -141,18 +138,19 @@ public class LocacaoController {
                     view.addObject("clientes", clienteRepository.findAll());
 
                     view.addObject("locacoes", locacaoRepository.findAll());
-                }}
-
-
-            }catch(Exception ex){
-            ex.printStackTrace();
-                flash.addFlashAttribute("errormessage", "Um erro inesperado ocorreu. Provavelmente nenhum filme foi" +
-                        " selecionado para locacação");
+                }
             }
 
-        view.setViewName("redirect:/locacao");
-            return view;
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            flash.addFlashAttribute("errormessage", "Um erro inesperado ocorreu. Provavelmente nenhum filme foi" +
+                    " selecionado para locacação");
         }
+
+        view.setViewName("redirect:/locacao");
+        return view;
+    }
 
     public LocacaoDAO getLocacaoRepository() {
         return locacaoRepository;
@@ -173,7 +171,7 @@ public class LocacaoController {
         filmeRepository.save(new Filme("Os Vingadores", 4, 4.0));
         filmeRepository.save(new Filme("Um drink no inferno", 3, 4.0));
         filmeRepository.save(new Filme("A espera de um milagre", 8, 4.0));
-        clienteRepository.save(new Cliente("Angelo Luz","01403551030"));
+        clienteRepository.save(new Cliente("Angelo Luz", "01403551030"));
         clienteRepository.save(new Cliente("Mussum"));
         clienteRepository.save(new Cliente("Axl Rose"));
 

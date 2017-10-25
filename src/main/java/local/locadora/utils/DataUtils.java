@@ -1,12 +1,9 @@
 package local.locadora.utils;
 
-import static java.util.Calendar.DAY_OF_MONTH;
-import static java.util.Calendar.DAY_OF_WEEK;
-import static java.util.Calendar.MONTH;
-import static java.util.Calendar.YEAR;
-
 import java.util.Calendar;
 import java.util.Date;
+
+import static java.util.Calendar.*;
 
 public class DataUtils {
 
@@ -55,7 +52,7 @@ public class DataUtils {
     }
 
     /**
-     * Verifica se uma data é igual a outra. 
+     * Verifica se uma data é igual a outra.
      * Esta comparação considera apenas dia, mes e ano
      *
      * @param data1
@@ -75,9 +72,9 @@ public class DataUtils {
     /**
      * Verifica se uma determinada data é o dia da semana desejado
      *
-     * @param data Data a ser avaliada
+     * @param data      Data a ser avaliada
      * @param diaSemana <code>true</code> caso seja o dia da semana desejado,
-     * <code>false</code> em caso contrário
+     *                  <code>false</code> em caso contrário
      * @return
      */
     public static boolean verificarDiaSemana(Date data, int diaSemana) {

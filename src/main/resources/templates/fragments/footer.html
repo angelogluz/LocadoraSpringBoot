@@ -1,5 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
 </head>
@@ -9,9 +9,9 @@
     <div class="container">
 
         <footer>
-        <!-- this is footer -->
+            <!-- this is footer -->
             <br/>
-        &copy; 2017 Angelo Gonçalves da Luz
+            &copy; 2017 Angelo Gonçalves da Luz
             <span sec:authorize="isAuthenticated()">
                 | Usuário logado: <span sec:authentication="name"></span> |
                 Roles: <span sec:authentication="principal.authorities"></span>
@@ -35,17 +35,13 @@
             <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
 
 
-
-
             <!-- Custom Theme JavaScript -->
             <script src="../dist/js/sb-admin-2.js"></script>
 
 
-
-
             <!-- Page-Level Demo Scripts - Tables - Use for reference -->
             <script>
-                $(document).ready(function() {
+                $(document).ready(function () {
                     $('#dataTables-example').DataTable({
                         "language": {
                             "lengthMenu": "Mostrar _MENU_ registros por página",
@@ -53,12 +49,12 @@
                             "info": "Mostrando página _PAGE_ de _PAGES_",
                             "infoEmpty": "Nenhum registro para mostrar",
                             "infoFiltered": "(filtrado de _MAX_ registros totais)",
-                            "search":         "Procurar:",
+                            "search": "Procurar:",
                             "paginate": {
-                                "first":      "Primeiro",
-                                "last":       "Último",
-                                "next":       "Próximo",
-                                "previous":   "Anterior"
+                                "first": "Primeiro",
+                                "last": "Último",
+                                "next": "Próximo",
+                                "previous": "Anterior"
                             },
                             responsive: true,
                         }

@@ -1,12 +1,13 @@
 package local.locadora.controller;
 
-import java.text.ParseException;
-import java.util.Locale;
 import local.locadora.dao.ClienteDAO;
 import local.locadora.entities.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.Formatter;
 import org.springframework.stereotype.Controller;
+
+import java.text.ParseException;
+import java.util.Locale;
 
 @Controller
 public class ClienteFormatter implements Formatter<Cliente> {

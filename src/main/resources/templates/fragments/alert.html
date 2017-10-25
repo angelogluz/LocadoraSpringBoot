@@ -5,17 +5,17 @@
 </head>
 <body>
 <div th:fragment="alert">
-<h2 th:text="${errorMessage}"></h2>
-<div th:if="${errormessage}">
-    <div class="alert alert-danger">
-        <span th:text="${errormessage}"></span>
+    <h2 th:text="${errorMessage}"></h2>
+    <div th:if="${errormessage}">
+        <div class="alert alert-danger">
+            <span th:text="${errormessage}"></span>
+        </div>
     </div>
-</div>
-<div th:if="${sucessmessage}">
-    <div class="alert alert-info">
-        <span th:text="${sucessmessage}"></span>
+    <div th:if="${sucessmessage}">
+        <div class="alert alert-info">
+            <span th:text="${sucessmessage}"></span>
+        </div>
     </div>
-</div>
 </div>
 </body>
 </html>

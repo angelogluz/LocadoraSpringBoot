@@ -5,7 +5,6 @@
  */
 package local.locadora.dao;
 
-import java.util.List;
 import local.locadora.entities.Filme;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
@@ -13,8 +12,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
- *
  * @author angelogl
  */
 @Repository
@@ -27,6 +27,6 @@ public interface FilmeDAO extends JpaRepository<Filme, Long> {
     List<Filme> findFirst10ByNome(String lastname, Sort sort);
 
     List<Filme> findByEstoqueGreaterThan(Integer estoque);
-    
+
     boolean existsById(Filme filme);
 }
