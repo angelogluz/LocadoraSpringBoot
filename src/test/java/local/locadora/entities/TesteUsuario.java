@@ -5,6 +5,8 @@
  */
 package local.locadora.entities;
 
+import java.util.Arrays;
+import java.util.List;
 import local.locadora.dao.UsuarioDAO;
 import local.locadora.exceptions.UsuarioException;
 import local.locadora.utils.NumberUtils;
@@ -16,6 +18,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 import org.mockito.Mock;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -28,7 +33,8 @@ import org.springframework.test.context.junit4.SpringRunner;
  *
  * @author Jones
  */
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
+@RunWith(Parameterized.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class TesteUsuario {
@@ -56,7 +62,7 @@ public class TesteUsuario {
     }
 
     @Test
-    public void nãoDeveSalvarUsuarioSemNome() {
+    public void naoDeveSalvarUsuarioSemNome() {
 
         //Cenário
         String nome = "";
@@ -75,7 +81,7 @@ public class TesteUsuario {
     }
 
     @Test
-    public void nãoDeveSalvarUsuarioComNumeroNoNome() {
+    public void naoDeveSalvarUsuarioComNumeroNoNome() {
 
         //Cenário
         String nome = "12345";
@@ -95,7 +101,7 @@ public class TesteUsuario {
     }
 
     @Test
-    public void nãoDeveSalvarUsuarioComNomeEmMinusculo() throws UsuarioException {
+    public void naoDeveSalvarUsuarioComNomeEmMinusculo() throws UsuarioException {
 
         //Cenário
         String nome = "foo";
@@ -124,4 +130,8 @@ public class TesteUsuario {
         Assert.assertEquals("Foo", user.setNome("foo"));
 
     }
+
+   
+
 }
+
