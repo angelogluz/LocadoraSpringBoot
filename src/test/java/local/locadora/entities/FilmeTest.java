@@ -58,7 +58,7 @@ public class FilmeTest {
         try {
             Filme filme = new Filme("", 10, 4d);
         } catch (Exception e) {
-            assertEquals(e.getMessage(), "Não é possível cadastrar filme sem nome!");
+            assertEquals(e.getMessage(), "Não é possível cadastrar filme sem nome");
         }
     }
     // Não deve aceitar um valor de estoque negativo!
