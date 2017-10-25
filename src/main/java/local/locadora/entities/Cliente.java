@@ -9,6 +9,9 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
+
+
+
 @Entity
 @Validated
 public class Cliente implements Serializable {
@@ -45,6 +48,9 @@ public class Cliente implements Serializable {
         this.cpf = cpf;
     }
 
+
+    
+    
     public String getNome() {
         return nome;
     }

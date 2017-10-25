@@ -34,7 +34,7 @@ public class ClienteEntityTest {
         //while(it.hasNext()){
         ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
         String message = x.getMessage();
-        // }
+        //}
 
         assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
     }
