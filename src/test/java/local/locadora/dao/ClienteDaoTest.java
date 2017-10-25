@@ -12,6 +12,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.validation.ConstraintViolationException;
 
 import static org.assertj.core.api.Fail.fail;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -30,6 +32,15 @@ public class ClienteDaoTest {
         clienteRepository.save(user);
         Cliente u = clienteRepository.findByNome("As");
         fail("Não deveria ter persistido o nome com 3 caracteres");
+    }
+    
+    @Test(expected = ConstraintViolationException.class)
+    public void testControllerInserindoNomePrimeiroCaracteresNoNomeMaiusculo() {
+        Cliente user = new Cliente();
+        user.setNome("angelo");
+        clienteRepository.save(user);
+        Cliente u = clienteRepository.findByNome("angelo");
+         assertThat(u.getNome(),is(user.getNome()));
     }
 
 }
