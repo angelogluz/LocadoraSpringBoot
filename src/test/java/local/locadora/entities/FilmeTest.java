@@ -44,7 +44,7 @@ public class FilmeTest {
             ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
             String message = x.getMessage();
 
-            assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres!"));
+            assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres"));
         }
     }
 
