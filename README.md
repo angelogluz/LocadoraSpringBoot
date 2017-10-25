@@ -32,7 +32,7 @@ localhost:8080/locacao
 
 Em caso de falha ao executar o maven, é provável que o motivo seja o Cache do Netbeans. 
 
-Neste caso, remova todo conteúdo da pasta <code>~/AppData/Local/Netbeans/Cache</code>
-e também do diretório <code>~/AppData/Roaming/Netbeans/8.2/var</code>. Onde "8.2" representa a versão da IDE instalada.
+Neste caso, remova todo conteúdo da pasta <code> \~/AppData/Local/Netbeans/Cache</code>
+e também do diretório <code> \~/AppData/Roaming/Netbeans/8.2/var</code>. Onde "8.2" representa a versão da IDE instalada.
 
 
