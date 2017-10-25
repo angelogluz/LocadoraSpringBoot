@@ -9,9 +9,13 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 
 import static org.assertj.core.api.Fail.fail;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -31,5 +35,27 @@ public class ClienteDaoTest {
         Cliente u = clienteRepository.findByNome("As");
         fail("Não deveria ter persistido o nome com 3 caracteres");
     }
+
+    @Test
+    public void naoDeveValidarUmNomeComEspacosNoInicoOuFim() {
+        Cliente cliente = new Cliente();
+        cliente.setNome(" Vargas");
+        clienteRepository.save(cliente);
+
+        Cliente c = clienteRepository.findByNome("Vargas");
+        assertThat(c, is("Vargas"));
+    }
+
+    @Test
+    public void naoDeveValidarUmNomeComPrimeiraLetraMaiuscula() {
+        Cliente cliente = new Cliente();
+        cliente.setNome("anamelia");
+        clienteRepository.save(cliente);
+
+        Cliente c = clienteRepository.findByNome("Anamelia");
+        assertThat(c, is("Anamelia"));
+    }
+
+
 
 }
