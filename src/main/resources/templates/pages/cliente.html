@@ -77,6 +77,7 @@
                                     <tr>
                                         <th>Código</th>
                                         <th>Nome</th>
+                                        <th>CPF</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -86,7 +87,7 @@
                                         <!--/*@thymesVar id="cliente" type="local.locadora.entities.Cliente"*/-->
                                         <th th:text="${cliente.id}" scope="row"></th>
                                         <td th:text="${cliente.nome}"></td>
-
+                                        <td th:text="${cliente.cpf}"></td>
                                     </tr>
                                 </tbody>
                             </table>

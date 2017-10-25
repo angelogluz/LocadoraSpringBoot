@@ -142,14 +142,15 @@ public class LocacaoController {
 
                     view.addObject("locacoes", locacaoRepository.findAll());
                 }}
-            view.setViewName("pages/locacao");
+
 
             }catch(Exception ex){
+            ex.printStackTrace();
                 flash.addFlashAttribute("errormessage", "Um erro inesperado ocorreu. Provavelmente nenhum filme foi" +
                         " selecionado para locacação");
-            view.setViewName("redirect:/locacao");
             }
 
+        view.setViewName("redirect:/locacao");
             return view;
         }
 
@@ -172,7 +173,7 @@ public class LocacaoController {
         filmeRepository.save(new Filme("Os Vingadores", 4, 4.0));
         filmeRepository.save(new Filme("Um drink no inferno", 3, 4.0));
         filmeRepository.save(new Filme("A espera de um milagre", 8, 4.0));
-        clienteRepository.save(new Cliente("Angelo Luz"));
+        clienteRepository.save(new Cliente("Angelo Luz","01403551030"));
         clienteRepository.save(new Cliente("Mussum"));
         clienteRepository.save(new Cliente("Axl Rose"));
 

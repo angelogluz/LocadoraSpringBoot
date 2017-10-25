@@ -24,6 +24,9 @@ Caso execute e queira logar no sistema, o usuário é **admin** e a senha **pass
 * O CPF do cliente não é obrigatório, mas caso preenchido precisa ser válido
 **Mensagem de validação:** "O CPF não é válido";
 
+* O CPF deve ser persistido no banco sem separadores
+**Mensagem de validação:** Nenhuma;
+
 * O campo nome deve ser um valor entre 4 e 50, inclusive
 **Mensagem de validação:** "Um nome deve possuir entre 4 e 50 caracteres";
 
