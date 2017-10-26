@@ -38,4 +38,58 @@ public class ClienteEntityTest {
 
         assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
     }
+    
+    @Test
+    public void deveValidarCPF (){
+        
+        
+        //cenário
+        Cliente user = new Cliente();        
+        
+        //ação
+        user.setNome("João");
+        user.setCpf("12121212");
+        
+        //validação
+        Set<ConstraintViolation<Cliente>> violations = validator.validate(user);
+        Iterator it = violations.iterator();
+        //while(it.hasNext()){
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        // }
+
+        assertThat(message, is("O CPF não é válido"));
+    }
+    
+    @Test
+    public void naoDeveAceitarCarcteresEspeciaisNemNumerosNoNome(){
+         //cenário
+        Cliente cliente = new Cliente();        
+        
+        //ação
+        cliente.setNome("P@t0");
+        
+        //validação
+        Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
+        Iterator it = violations.iterator();
+        //while(it.hasNext()){
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        // }
+
+        assertThat(message, is("O nome não deve possuir simbolos ou números"));
+    }
+    
+    @Test
+    public void naoDeveAceitarEspaçosNoInicioENoFimDoNome(){
+         //cenário
+        Cliente cliente = new Cliente();        
+        
+        //ação
+        cliente.setNome(" João ");
+    }
+    
+        
+    
+    
 }
