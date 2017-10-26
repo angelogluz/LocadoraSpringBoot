@@ -3,6 +3,10 @@ package local.locadora.entities;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.*;
+import local.locadora.exceptions.UsuarioException;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+import org.junit.Test;
 
 @Entity
 public class Usuario implements Serializable {
@@ -64,4 +68,19 @@ public class Usuario implements Serializable {
         }
         return true;
     }
+
+    
+
+    private void assertTrue(String string, boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setCpf(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getCpf() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

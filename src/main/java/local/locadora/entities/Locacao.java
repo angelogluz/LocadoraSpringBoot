@@ -6,23 +6,23 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.*;
+import org.junit.Test;
 
 @Entity
 public class Locacao implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Usuario usuario;
     @ManyToMany
     private List<Filme> filmes;
-    
+
     @Temporal(TemporalType.DATE)
     private Date dataLocacao;
     @Temporal(TemporalType.DATE)
     private Date dataRetorno;
     private Double valor;
-    
 
     public Locacao() {
         filmes = new ArrayList<>();
@@ -80,5 +80,6 @@ public class Locacao implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
 
 }
