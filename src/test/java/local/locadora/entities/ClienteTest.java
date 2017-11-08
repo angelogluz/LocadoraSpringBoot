@@ -1,4 +1,4 @@
-package local.locadora.dao;
+package local.locadora.entities;
 
 /**
  *
@@ -12,8 +12,6 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import local.locadora.dao.ClienteDAO;
-import local.locadora.entities.Cliente;
-import local.locadora.entities.Cliente;
 import static org.assertj.core.api.Fail.fail;
 import static org.hamcrest.core.Is.is;
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
@@ -78,7 +76,7 @@ public class ClienteTest {
         Cliente c1 = clientRepository.save(cliente);
         Cliente c2 = clientRepository.findByNome("1212 1212");
 
-        assertFalse(c2.getNome().matches("([0-9]+[ ]*)+"));
+        assertFalse(c2.getNome().matches("([0-9])"));
     }
 
     @Test
@@ -99,17 +97,14 @@ public class ClienteTest {
         while (it.hasNext()) {
             ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
             String message = x.getMessage();
-            assertTrue(cliente.getNome().equals("Angelo"));
+            assertTrue(cliente.getNome().equals("Luiz"));
         }
     }
 
     @Test
     public void cpfDeveraPersistirSemSeparadores() {
-        //Cenário
         Cliente cliente = new Cliente();
-        //Ação
         cliente.setCpf("005.506.790-57");
-        //Validação
         assertEquals("00550679057", cliente.getCpf());
     }
 
@@ -148,6 +143,5 @@ public class ClienteTest {
         String message = x.getMessage();
         assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
     }
-    
-    		    
+
 }
