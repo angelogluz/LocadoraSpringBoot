@@ -126,8 +126,8 @@ public class ClienteTest {
     @Test
     public void nomeDeveraSerArmazenadoComPrimeiraLetraMaiuscula() {
         Cliente cliente = new Cliente();
-        cliente.setNome("Zunino");
-        assertThat(cliente.getNome(), is("zunino"));
+        cliente.setNome("luiz");
+        assertThat(cliente.getNome(), is("Luiz"));
     }
 
     public void nomeDeveTerEntre4e50Caracteres() {
