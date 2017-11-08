@@ -1,4 +1,4 @@
-package local.locadora.entities;
+package local.locadora.dao;
 
 /**
  *
@@ -12,6 +12,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import local.locadora.dao.ClienteDAO;
+import local.locadora.entities.Cliente;
 import local.locadora.entities.Cliente;
 import static org.assertj.core.api.Fail.fail;
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
@@ -98,8 +99,13 @@ public class ClienteTest {
             String message = x.getMessage();
             assertTrue(cliente.getNome().equals("Angelo"));
         }
+    }
 
+    @Test
+    public void naoDeveraAceitarEspacoEmBrancoNoInicioNemNoFimDoNome() {
+        Cliente cliente = new Cliente();
+        cliente.setNome(" Vovozona ");
+        assertEquals("Vovozona", cliente.getNome());
     }
 
 }
-
