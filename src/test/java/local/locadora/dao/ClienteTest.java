@@ -104,13 +104,6 @@ public class ClienteTest {
     }
 
     @Test
-    public void naoDeveraAceitarEspacoEmBrancoNoInicioNemNoFimDoNome() {
-        Cliente cliente = new Cliente();
-        cliente.setNome(" Luiz ");
-        assertEquals("Luiz", cliente.getNome());
-    }
-
-    @Test
     public void cpfDeveraPersistirSemSeparadores() {
         //Cenário
         Cliente cliente = new Cliente();
