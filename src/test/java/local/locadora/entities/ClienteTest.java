@@ -104,8 +104,8 @@ public class ClienteTest {
     @Test
     public void cpfDeveraPersistirSemSeparadores() {
         Cliente cliente = new Cliente();
-        cliente.setCpf("005.506.790-57");
-        assertEquals("00550679057", cliente.getCpf());
+        cliente.setCpf("123.456.789-12");
+        assertEquals("1234567891", cliente.getCpf());
     }
 
     @Test
