@@ -79,7 +79,7 @@ public class LocacaoControlerTest {
     public void deveVerificarDataDeDevolucao() throws FilmeSemEstoqueException,
             LocadoraException {
 
-        controller.setarDataEntrega(new Date(), locacoes);
+        controller.setDataEntrega(new Date(), locacoes);
         Assert.assertThat()(locacoes.getDataRetorno().getDate(), is(dataentrega.getDate()));
     }
 }

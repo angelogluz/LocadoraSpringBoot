@@ -179,4 +179,8 @@ public class LocacaoController {
 
 
     }
+
+    void setDataEntrega(Date date, Locacao locacoes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
