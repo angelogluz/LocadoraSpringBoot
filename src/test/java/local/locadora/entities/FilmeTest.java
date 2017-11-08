@@ -75,7 +75,6 @@ public class FilmeTest {
     @Test
     public void naoAceitarPrecoLocacaoNegativo() {
         Filme filme = new Filme("FilmeTeste", 2, -2.50);
-
         assertTrue(filme.getPrecoLocacao() > 0);
     }
 
@@ -83,7 +82,6 @@ public class FilmeTest {
     @Test
     public void naoAceitarSomenteEspacoNoNome() {
         Filme filme = new Filme(" ", 2, 2.50);
-
         assertFalse(filme.getNome().matches("[ ]*"));
     }
 

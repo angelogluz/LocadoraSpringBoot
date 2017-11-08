@@ -89,7 +89,7 @@ public class ClienteTest {
     }
 
     @Test
-    public void espacoNoInicioDoNome() {
+    public void naoDeveraAceitarEspacoEmBrancoNoInicioNemNoFimDoNome() {
         Cliente cliente = new Cliente();
         cliente.setNome(" Luiz ");
         Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
