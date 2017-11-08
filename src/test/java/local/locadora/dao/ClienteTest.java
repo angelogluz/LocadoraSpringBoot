@@ -108,4 +108,14 @@ public class ClienteTest {
         assertEquals("Vovozona", cliente.getNome());
     }
 
+    @Test
+    public void cpfDeveraPersistirSemSeparadores() {
+        //Cenário
+        Cliente cliente = new Cliente();
+        //Ação
+        cliente.setCpf("005.506.790-57");
+        //Validação
+        assertEquals("00550679057", cliente.getCpf());
+    }
+
 }
