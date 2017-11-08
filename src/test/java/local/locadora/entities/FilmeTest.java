@@ -8,6 +8,7 @@ import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import static org.hamcrest.core.Is.is;
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -102,6 +103,21 @@ public class FilmeTest {
         ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
         String message = x.getMessage();
         assertThat(message, is("O preço deve ter no maximo dois dígitos"));
+    }
+
+    @Test
+    public void nomeDeveraSerUnico() {
+        Filme filme1 = new Filme();
+        Filme filme2 = new Filme();
+        try {
+            filme1.setNome("Vovozona");
+            filme2.setNome("Vovozona");
+            fail();
+            //Lancará uma exception;
+        } catch (Exception e) {
+            Object ExceptionCliente = null;
+            Assert.assertSame(ExceptionCliente, e);
+        }
     }
 
 }

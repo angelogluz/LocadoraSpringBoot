@@ -15,7 +15,9 @@ import local.locadora.dao.ClienteDAO;
 import local.locadora.entities.Cliente;
 import local.locadora.entities.Cliente;
 import static org.assertj.core.api.Fail.fail;
+import static org.hamcrest.core.Is.is;
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
+import org.junit.Assert;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -118,4 +120,41 @@ public class ClienteTest {
         assertEquals("00550679057", cliente.getCpf());
     }
 
+    @Test
+    public void nomeDeveraSerUnico() {
+        Cliente cliente1 = new Cliente();
+        Cliente cliente2 = new Cliente();
+        try {
+            cliente1.setNome("Luiz");
+            cliente2.setNome("Luiz");
+            Assert.fail();
+            //Lancará uma exception;
+        } catch (Exception e) {
+            Object ExceptionCliente = null;
+            Assert.assertSame(ExceptionCliente, e);
+        }
+    }
+
+    @Test
+    public void nomeDeveraSerArmazenadoComPrimeiraLetraMaiuscula() {
+        Cliente cliente = new Cliente();
+        cliente.setNome("Zunino");
+        assertThat(cliente.getNome(), is("zunino"));
+    }
+
+    public void nomeDeveTerEntre4e50Caracteres() {
+        Cliente cliente = new Cliente();
+        String nome = "";
+        for (int i = 4; i < 51; i++) {
+            nome += "l";
+        }
+        cliente.setNome(nome);
+        Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
+    }
+    
+    		    
 }
