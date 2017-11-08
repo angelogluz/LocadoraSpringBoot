@@ -104,8 +104,8 @@ public class ClienteTest {
     @Test
     public void naoDeveraAceitarEspacoEmBrancoNoInicioNemNoFimDoNome() {
         Cliente cliente = new Cliente();
-        cliente.setNome(" Vovozona ");
-        assertEquals("Vovozona", cliente.getNome());
+        cliente.setNome(" Luiz ");
+        assertEquals("Luiz", cliente.getNome());
     }
 
     @Test

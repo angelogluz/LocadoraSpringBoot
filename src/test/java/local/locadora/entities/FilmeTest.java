@@ -85,4 +85,23 @@ public class FilmeTest {
 
         assertFalse(filme.getNome().matches("[ ]*"));
     }
+
+    @Test
+    public void naoDeveraAceitarEspacoEmBrancoNoInicioNemNoFimDoNome() {
+        Filme filme = new Filme();
+        filme.setNome(" Vovozona ");
+        assertEquals("Vovozona", filme.getNome());
+    }
+
+    @Test
+    public void naoDeveraUltrapassarDoisDigitosAposVirgula() {
+        Filme filme = new Filme();
+        filme.setPrecoLocacao(123.456);
+        Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        assertThat(message, is("O preço deve ter no maximo dois dígitos"));
+    }
+
 }
