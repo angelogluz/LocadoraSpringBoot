@@ -1,3 +1,4 @@
+/**
 package local.locadora.dao;
 
 import local.locadora.entities.Cliente;
@@ -33,3 +34,4 @@ public class ClienteDaoTest {
     }
 
 }
+**/
