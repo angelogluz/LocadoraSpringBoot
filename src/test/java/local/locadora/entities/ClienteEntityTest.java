@@ -38,4 +38,15 @@ public class ClienteEntityTest {
 
         assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
     }
+    @Test
+    public void naoDeveValidarUmNomeComDoisCaracteres2() {
+        try {
+            Cliente cliente = new Cliente();
+            cliente.setNome("An");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+
+    }
 }

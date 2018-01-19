@@ -3,6 +3,7 @@ package local.locadora.controller;
 import local.locadora.dao.FilmeDAO;
 import local.locadora.entities.Filme;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 
 @Controller
 public class FilmeController {
@@ -49,5 +51,7 @@ public class FilmeController {
             return new ModelAndView("redirect:/filme");
         }
     }
+
+
 
 }

@@ -1,135 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="locadora:war" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2549bba8-6909-4416-a41f-749208b3aee6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Trabalho.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/css/sb-admin-2.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/locadora.iml" afterPath="$PROJECT_DIR$/locadora.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/LocadoraApplication.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/LocadoraApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/config/WebMvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/config/WebMvcConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/config/WebSecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/config/WebSecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/controller/ClienteController.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/controller/ClienteController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/controller/ClienteFormatter.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/controller/ClienteFormatter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/controller/DefaultController.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/controller/DefaultController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeController.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeFormatter.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeFormatter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/controller/LocacaoController.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/controller/LocacaoController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/controller/rest/FilmeControllerAPI.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/controller/rest/FilmeControllerAPI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/controller/rest/LocacaoControllerAPI.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/controller/rest/LocacaoControllerAPI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/controller/rest/UsuarioControllerAPI.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/controller/rest/UsuarioControllerAPI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/dao/ClienteDAO.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/dao/ClienteDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/dao/FilmeDAO.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/dao/FilmeDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/dao/LocacaoDAO.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/dao/LocacaoDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/entities/Cliente.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/entities/Cliente.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/entities/Filme.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/entities/Filme.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/entities/Locacao.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/entities/Locacao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/exceptions/LocadoraException.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/exceptions/LocadoraException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/local/locadora/utils/DataUtils.java" afterPath="$PROJECT_DIR$/src/main/java/local/locadora/utils/DataUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/public/error/404.html" afterPath="$PROJECT_DIR$/src/main/resources/public/error/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/public/error/500.html" afterPath="$PROJECT_DIR$/src/main/resources/public/error/500.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/data/flot-data.js" afterPath="$PROJECT_DIR$/src/main/resources/static/data/flot-data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/data/morris-data.js" afterPath="$PROJECT_DIR$/src/main/resources/static/data/morris-data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/sb-admin-2.js" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/sb-admin-2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/sb-admin-2.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sb-admin-2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/less/sb-admin-2.less" afterPath="$PROJECT_DIR$/src/main/resources/static/less/sb-admin-2.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap-social/bootstrap-social.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap-social/bootstrap-social.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap-social/bootstrap-social.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap-social/bootstrap-social.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap-social/bootstrap-social.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap-social/bootstrap-social.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-plugins/dataTables.bootstrap.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-plugins/dataTables.bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-plugins/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-plugins/dataTables.bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-plugins/index.html" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-plugins/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-responsive/dataTables.responsive.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-responsive/dataTables.responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-responsive/dataTables.responsive.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-responsive/dataTables.responsive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-responsive/dataTables.responsive.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-responsive/dataTables.responsive.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.bootstrap.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.bootstrap4.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.bootstrap4.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.foundation.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.foundation.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.jqueryui.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.jqueryui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.material.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.material.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.semanticui.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.semanticui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.uikit.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/dataTables.uikit.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/jquery.dataTables.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/jquery.dataTables.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/jquery.dataTables_themeroller.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/css/jquery.dataTables_themeroller.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.bootstrap4.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.bootstrap4.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.foundation.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.foundation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.jqueryui.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.jqueryui.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.material.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.material.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.semanticui.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.semanticui.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.uikit.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/dataTables.uikit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/jquery.dataTables.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/jquery.dataTables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot-tooltip/jquery.flot.tooltip.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot-tooltip/jquery.flot.tooltip.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot-tooltip/jquery.flot.tooltip.source.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot-tooltip/jquery.flot.tooltip.source.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/excanvas.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/excanvas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.colorhelpers.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.colorhelpers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.canvas.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.canvas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.categories.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.categories.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.crosshair.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.crosshair.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.errorbars.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.errorbars.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.fillbetween.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.fillbetween.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.image.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.image.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.navigate.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.navigate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.pie.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.pie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.resize.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.resize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.selection.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.selection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.stack.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.stack.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.symbol.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.symbol.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.threshold.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.threshold.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.time.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.flot.time.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/flot/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/css/font-awesome.css.map" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/css/font-awesome.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/animated.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/animated.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/bordered-pulled.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/font-awesome.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/icons.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/larger.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/larger.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/list.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/mixins.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/mixins.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/path.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/rotated-flipped.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/screen-reader.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/screen-reader.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/spinning.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/spinning.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/stacked.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/stacked.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/less/variables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_animated.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_animated.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_bordered-pulled.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_extras.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_extras.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_icons.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_larger.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_larger.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_list.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_list.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_mixins.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_mixins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_path.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_path.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_rotated-flipped.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_screen-reader.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_screen-reader.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_spinning.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_spinning.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_stacked.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_stacked.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/_variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/font-awesome/scss/font-awesome.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/jquery/jquery.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/jquery/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/metisMenu/metisMenu.css" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/metisMenu/metisMenu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/metisMenu/metisMenu.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/metisMenu/metisMenu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/morrisjs/morris.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/morrisjs/morris.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/vendor/raphael/raphael.js" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/raphael/raphael.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/alert.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/alert.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/gulpfile.js" afterPath="$PROJECT_DIR$/src/main/resources/templates/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/cliente.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/cliente.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/filme.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/filme.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/locacao.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/locacao.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/local/locadora/controller/ClienteControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/local/locadora/controller/ClienteControllerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/local/locadora/dao/ClienteDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/local/locadora/dao/ClienteDaoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/local/locadora/entities/ClienteEntityTest.java" afterPath="$PROJECT_DIR$/src/test/java/local/locadora/entities/ClienteEntityTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -141,34 +27,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ClienteEntityTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/entities/ClienteEntityTest.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="FilmeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClienteDaoTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/dao/ClienteDaoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClienteControllerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/controller/ClienteControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="37" column="26" lean-forward="false" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -177,11 +41,19 @@
       <file leaf-file-name="DefaultController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/DefaultController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="135">
               <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClienteFormatter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/ClienteFormatter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -189,8 +61,48 @@
       <file leaf-file-name="ClienteController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/ClienteController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="72" lean-forward="false" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebSecurityConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/config/WebSecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocadoraApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/LocadoraApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,70 +110,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="404.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/public/error/404.html">
+      <file leaf-file-name="LocacaoController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/LocacaoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="221" column="0" lean-forward="false" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
+            <state relative-caret-position="2175">
+              <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="500.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/public/error/500.html">
+      <file leaf-file-name="FilmeFormatter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeFormatter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="220" column="49" lean-forward="false" selection-start-line="220" selection-start-column="49" selection-end-line="220" selection-end-column="49" />
+            <state relative-caret-position="75">
+              <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filme.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/pages/filme.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="385">
-                <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Trabalho.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Trabalho.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-                <folding>
-                  <marker date="1508941203000" expanded="true" signature="747:839" ph="@{...}" />
-                  <marker date="1508941203000" expanded="true" signature="1066:1080" ph=" { " />
-                  <marker date="1508941203000" expanded="true" signature="1134:1144" ph=" }" />
-                  <marker date="1508941203000" expanded="true" signature="1212:1456" ph="{...}" />
-                  <marker date="1508941203000" expanded="true" signature="1496:1588" ph="@{...}" />
-                  <marker date="1508941203000" expanded="true" signature="1728:1744" ph="{}" />
-                  <marker date="1508941203000" expanded="true" signature="1787:2001" ph="{...}" />
-                </folding>
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -299,6 +163,8 @@
       <find>token</find>
       <find>login</find>
       <find>important</find>
+      <find>jar</find>
+      <find>tomcat</find>
     </findStrings>
     <replaceStrings>
       <replace>cliente</replace>
@@ -316,9 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/vendor/datatables/js/jquery.dataTables.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/vendor/datatables-plugins/dataTables.bootstrap.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/filme.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/pages/tables.html" />
         <option value="$PROJECT_DIR$/src/main/java/local/locadora/controller/UsuarioController.java" />
         <option value="$PROJECT_DIR$/src/main/java/local/locadora/entities/Usuario.java" />
@@ -326,18 +189,14 @@
         <option value="$PROJECT_DIR$/src/main/java/local/locadora/controller/rest/LocacaoControllerAPI.java" />
         <option value="$PROJECT_DIR$/src/test/java/local/locadora/dao/UsuarioRepositoryExemploTeste.java" />
         <option value="$PROJECT_DIR$/src/main/java/local/locadora/controller/UsuarioFormatter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/local/locadora/LocadoraApplication.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/sidebar.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/layout.html" />
         <option value="$PROJECT_DIR$/src/main/java/local/locadora/controller/ExceptionHandlerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/local/locadora/controller/ExceptionHandlingController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/alert.html" />
-        <option value="$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/local/locadora/config/WebMvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/local/locadora/dao/UsersDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/local/locadora/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" />
         <option value="$PROJECT_DIR$/src/main/java/local/locadora/entities/Users.java" />
@@ -357,9 +216,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/pages/cliente.html" />
         <option value="$PROJECT_DIR$/M.md" />
         <option value="$PROJECT_DIR$/src/main/java/local/locadora/entities/Cliente.java" />
-        <option value="$PROJECT_DIR$/src/main/java/local/locadora/controller/LocacaoController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/local/locadora/entities/ClienteEntityTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/public/error/404.html" />
         <option value="$PROJECT_DIR$/src/main/resources/public/error/500.html" />
         <option value="$PROJECT_DIR$/src/test/java/local/locadora/dao/ClienteDaoTest.java" />
@@ -367,6 +223,16 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/pages/filme.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Trabalho.md" />
+        <option value="$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/reports/report2.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/local/locadora/entities/ClienteEntityTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/local/locadora/config/WebSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/local/locadora/report/CustomReport.java" />
+        <option value="$PROJECT_DIR$/src/main/java/local/locadora/controller/CustomReport.java" />
+        <option value="$PROJECT_DIR$/src/main/java/local/locadora/controller/LocacaoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/local/locadora/LocadoraApplication.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -385,8 +251,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1438" />
-    <option name="height" value="835" />
+    <option name="width" value="1440" />
+    <option name="height" value="836" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -420,9 +286,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -474,33 +340,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="error" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="locadora" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Locadora_Spring-ToTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="locadora" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Locadora_Spring-ToTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="fragments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="locadora" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Locadora_Spring-ToTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="locadora" type="b2602c69:ProjectViewProjectNode" />
@@ -522,24 +362,6 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="locadora" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="locadora" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Locadora_Spring-ToTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="locadora" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="locadora" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Locadora_Spring-ToTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="locadora" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="locadora" type="b2602c69:ProjectViewProjectNode" />
@@ -554,7 +376,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -573,17 +395,17 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/fragments" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/pages" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="local.locadora.dao" />
       <recent name="local.locadora.controller" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/fragments" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/pages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -719,36 +541,22 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="CustomReport" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="local.locadora.report.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="local.locadora.report.CustomReport" />
+      <module name="locadora" />
+      <envs />
+    </configuration>
     <configuration name="LocadoraApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="local.locadora.LocadoraApplication" />
       <module name="locadora" />
       <envs />
-    </configuration>
-    <configuration name="TestQualquer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="local.locadora.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="locadora" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="local.locadora" />
-      <option name="MAIN_CLASS_NAME" value="local.locadora.TestQualquer" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -833,20 +641,20 @@
     </configuration>
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.LocadoraApplication" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ClienteControllerTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.All in locadora" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.All in locadora" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ClienteControllerTest" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.ClienteRepositoryExemploTeste" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TestQualquer" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.ClienteEntityTest" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.ClienteDaoTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ClienteEntityTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ClienteDaoTest" />
+      <item index="6" class="java.lang.String" itemvalue="Spring Boot.CustomReport" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ClienteControllerTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ClienteDaoTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ClienteEntityTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ClienteRepositoryExemploTeste" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestQualquer" />
+        <item index="0" class="java.lang.String" itemvalue="Spring Boot.CustomReport" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ClienteEntityTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ClienteControllerTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ClienteDaoTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ClienteRepositoryExemploTeste" />
       </list>
     </recent_temporary>
   </component>
@@ -865,13 +673,17 @@
       <workItem from="1508093050768" duration="934000" />
       <workItem from="1508093991723" duration="24176000" />
       <workItem from="1508200174490" duration="153836000" />
+      <workItem from="1509056459308" duration="1232000" />
+      <workItem from="1510017063550" duration="777000" />
+      <workItem from="1512653875642" duration="968000" />
+      <workItem from="1512909590164" duration="9758000" />
+      <workItem from="1512942367988" duration="2838000" />
+      <workItem from="1515546143982" duration="4856000" />
+      <workItem from="1515812321032" duration="421000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ClienteControllerExemploTeste - 2017.10.25 at 01h 53m 55s.xml">
-      <configuration name="ClienteControllerExemploTeste" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ClienteControllerExemploTeste - 2017.10.25 at 01h 56m 26s.xml">
       <configuration name="ClienteControllerExemploTeste" configurationId="JUnit" />
     </history-entry>
@@ -899,43 +711,48 @@
     <history-entry file="ClienteDaoExemploTeste - 2017.10.25 at 01h 52m 17s.xml">
       <configuration name="ClienteDaoExemploTeste" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ClienteEntityTest - 2017.11.06 at 23h 14m 15s.xml">
+      <configuration name="ClienteEntityTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179449000" />
+    <option name="totallyTimeSpent" value="204023000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1438" height="835" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="836" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25163826" sideWeight="0.16689847" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36173" sideWeight="0.3317107" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47251308" sideWeight="0.6682893" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18776079" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2638889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2699869" sideWeight="0.6620306" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32110092" sideWeight="0.37343532" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25163826" sideWeight="0.8331015" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23574409" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.49444443" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2699869" sideWeight="0.6620306" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.49721837" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18776079" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32068062" sideWeight="0.36300418" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.49444443" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -954,216 +771,15 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/pages/forms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1809">
-          <caret line="470" column="49" lean-forward="true" selection-start-line="470" selection-start-column="49" selection-end-line="470" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/sidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.0.RELEASE/spring-web-5.0.0.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/ExceptionHandlingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/alert.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/exceptions/FilmeSemEstoqueException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/dao/FilmeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/exceptions/LocadoraException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#348#349#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-409">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="242" column="3" lean-forward="false" selection-start-line="242" selection-start-column="3" selection-end-line="242" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/LocadoraApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/config/WebMvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-237">
-          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="48" column="57" lean-forward="false" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/ClienteFormatter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/dao/UsersDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/entities/Users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/locacao.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="57" column="23" lean-forward="false" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/usuario.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="36" column="6" lean-forward="false" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/dao/UsersDAO.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/entities/Users.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/locacao.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/usuario.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="78" column="79" lean-forward="false" selection-start-line="78" selection-start-column="74" selection-end-line="78" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/dao/ClienteDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeFormatter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,106 +787,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/TestQualquer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="43" column="18" lean-forward="false" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/TestQualquer.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/dao/ClienteRepositoryExemploTeste.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/controller/LocacaoControllerExemploTeste.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="55" column="12" lean-forward="false" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/entities/Filme.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/dao/ClienteRepositoryExemploTeste.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/controller/LocacaoControllerExemploTeste.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/entities/Locacao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="30" column="61" lean-forward="false" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1508936978000" expanded="true" signature="2507:2514" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="137">
-            <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/LocacaoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="147" column="33" lean-forward="true" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1609#1610#0" expanded="true" />
-            <element signature="e#5403#5404#0" expanded="true" />
-            <element signature="e#5443#5444#0" expanded="true" />
-            <element signature="e#5487#5488#0" expanded="true" />
-            <element signature="e#5525#5526#0" expanded="true" />
-            <element signature="e#5573#5574#0" expanded="true" />
-            <element signature="e#5613#5614#0" expanded="true" />
-            <marker date="1508936777000" expanded="true" signature="6190:6197" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/entities/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="23" column="128" lean-forward="false" selection-start-line="23" selection-start-column="128" selection-end-line="23" selection-end-column="128" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="375">
+          <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1278,10 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1185">
           <caret line="79" column="47" lean-forward="false" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1289,7 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="75" lean-forward="false" selection-start-line="42" selection-start-column="75" selection-end-line="42" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1297,7 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1305,25 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/entities/ClienteEntityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1331,35 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/controller/ClienteControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/DefaultController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/ClienteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1367,7 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="221" column="0" lean-forward="false" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1375,7 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="220" column="49" lean-forward="false" selection-start-line="220" selection-start-column="49" selection-end-line="220" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1383,20 +860,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="385">
-            <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-            <folding />
+          <first_editor relative-caret-position="255">
+            <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           </first_editor>
           <second_editor />
         </state>
@@ -1405,19 +876,193 @@
     <entry file="file://$PROJECT_DIR$/Trabalho.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-            <folding>
-              <marker date="1508941203000" expanded="true" signature="747:839" ph="@{...}" />
-              <marker date="1508941203000" expanded="true" signature="1066:1080" ph=" { " />
-              <marker date="1508941203000" expanded="true" signature="1134:1144" ph=" }" />
-              <marker date="1508941203000" expanded="true" signature="1212:1456" ph="{...}" />
-              <marker date="1508941203000" expanded="true" signature="1496:1588" ph="@{...}" />
-              <marker date="1508941203000" expanded="true" signature="1728:1744" ph="{}" />
-              <marker date="1508941203000" expanded="true" signature="1787:2001" ph="{...}" />
-            </folding>
+          <first_editor relative-caret-position="135">
+            <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/controller/ClienteControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="405">
+            <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/dao/LocacaoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/dao/FilmeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" column="56" lean-forward="false" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/rest/FilmeControllerAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="23" column="15" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="40" column="43" lean-forward="false" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/entities/Filme.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="22" column="87" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.classpath">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/entities/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/dao/ClienteDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/local/locadora/entities/ClienteEntityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/reports/report2.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/config/WebMvcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/report/CustomReport.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/FilmeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="37" column="26" lean-forward="false" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/DefaultController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/LocacaoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/reports/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/reports/chart_template.jrctx" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/reports/Wood_Table_Based.jrxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/CustomReport.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/ClienteFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/controller/ClienteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nbproject/project.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="72" lean-forward="false" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/local/locadora/LocadoraApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
