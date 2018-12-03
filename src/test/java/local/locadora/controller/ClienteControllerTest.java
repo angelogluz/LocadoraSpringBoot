@@ -1,4 +1,4 @@
-/**
+
 package local.locadora.controller;
 
 import local.locadora.dao.ClienteDAO;
@@ -55,4 +55,3 @@ public class ClienteControllerTest {
         fail();
     }
 }
-**/
