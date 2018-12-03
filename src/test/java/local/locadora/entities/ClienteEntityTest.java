@@ -1,4 +1,4 @@
-/**
+
 package local.locadora.entities;
 
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
@@ -14,10 +14,15 @@ import java.util.Set;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 
 public class ClienteEntityTest {
 
     private static Validator validator;
+    
+    @Rule
+    public ExpectedException expected = ExpectedException.none();
 
     @Before
     public void setUp() {
@@ -41,14 +46,10 @@ public class ClienteEntityTest {
     }
     @Test
     public void naoDeveValidarUmNomeComDoisCaracteres2() {
-        try {
             Cliente cliente = new Cliente();
             cliente.setNome("An");
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-
-
+            expected.expect(Exception.class);
+            expected.expectMessage("O Campo Nome deve ter entre 3 e 40 caracteres");
+            expected.reportMissingExceptionWithMessage("Aceitou nome com número de caracteres inválido");
     }
 }
-**/

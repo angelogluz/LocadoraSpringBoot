@@ -1,4 +1,4 @@
-# Prova ADS-M
+# Trabalho recuperativo - Teste de Software
 
 **Para começar:** Tirar um fork do projeto ou atualizar o existente. 
 
@@ -93,3 +93,60 @@ Caso execute e queira logar no sistema, o usuário é **admin** e a senha **pass
 * Ao alugar um filme a data de entrega deve ter o número de dias incrementado de forma proporcional ao número de filmes
 alugados. 
 **Mensagem de validação:** Nenhuma. Uma Exception deverá lançada;
+
+* **Bugs já reportados não devem ser duplicados. Podem ser adicionadas novas informações nos comentários**
+
+# Exemplos de teste nas Classes do Spring Boot
+## Teste na controller
+```java
+@RunWith(SpringRunner.class)
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = Replace.NONE)
+public class UsuarioControllerExemploTeste {
+
+        @Autowired
+        UsuarioDAO usuarioRepository;
+
+        @Mock
+        Model model;
+    
+        UsuarioController controller;
+
+        @Before
+        public void setup(){
+            controller = new UsuarioController(usuarioRepository);
+        }
+        @Test
+        public void testControllerInserindoUsuario() {
+            Usuario user = new Usuario();
+            user.setNome("Isa");
+            controller.save(user,model);
+            Usuario u = usuarioRepository.findByNome("Isa");
+            assertThat(u.getNome(),is(user.getNome()));
+        }
+}
+```
+## Teste no Repository
+```java
+@RunWith(SpringRunner.class)
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = Replace.NONE)
+public class UsuarioRepositoryExemploTeste {
+
+    @Autowired
+    private UsuarioDAO clientRepository;
+
+    @Before
+    public void setup() {
+        
+    }
+
+    @Test
+    public void testFindById() {
+        Usuario usuario = new Usuario("Foo");
+        Usuario u1 = clientRepository.save(usuario);
+        Usuario u = clientRepository.findById(u1.getId()).get();
+        assertThat(u.getNome(),is("Foo"));
+    }
+}
+```

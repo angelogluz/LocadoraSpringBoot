@@ -39,7 +39,6 @@ public class UsuarioControllerExemploTeste {
             assertThat(u.getNome(),is(user.getNome()));
         }
 }
-}
 ```
 ## Teste no Repository
 ```java
@@ -63,5 +62,5 @@ public class UsuarioRepositoryExemploTeste {
         Usuario u = clientRepository.findById(u1.getId()).get();
         assertThat(u.getNome(),is("Foo"));
     }
-```
 }
+```
