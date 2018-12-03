@@ -1,12 +1,14 @@
 # Trabalho recuperativo - Teste de Software
 
-**Para começar:** Tirar um fork do projeto ou atualizar o existente. 
+**Para começar:** Tirar um fork do projeto. 
 
-**Entrega** Ao finalizar as tarefas, submeter um <code>pull request</code> com os testes gerados.
+**Entrega** Ao finalizar as tarefas, submeter um <code>pull request</code> com os testes gerados. O pull request deverá ser enviado no dia 10, entre as 18h e 19h. **Nem antes, nem depois**
+
+**Atenção!** Para cada bug detectado deverá ser aberta uma Issue com o devido relato. No caso do bug já ter sido relatado por um colega, o relato não deve se repetir, mas pode receber adendos nos comentários.
 
 Criar os testes para validar os requisitos especificados na sequencia.
 
-**Atenção!** Os testes devem ser realizados em **apenas uma das camadas,** preferencialmente nas entidades.
+**Atenção!** Os testes podem ser realizados em **apenas uma das camadas,** recomendado que seja realizado nas entidades.
 
 Um exemplo de teste que pode ser utilizado como template segue no projeto.
 
@@ -14,14 +16,14 @@ Nas entidades, cada validação retorna uma mensagem diferente.
 
 Todo teste que não cumpre requisito de persistência, em caso de teste na controller ou dao, lança um <code> ConstraintViolationException </code> 
 
-É competência avaliada a escolha de melhores práticas e diversidade dos teste.
+É competência avaliada a escolha de melhores práticas e diversidade dos teste e a variedade de estratégias.
 
 Caso execute e queira logar no sistema, o usuário é **admin** e a senha **password**.
 
 # Requisitos de teste
 
 ## Cliente
-* O CPF do cliente não é obrigatório, mas caso preenchido precisa ser válido
+* O CPF do cliente não é obrigatório, mas caso preenchido precisa ser válido, não apenas em formato mas também matematicamente
 **Mensagem de validação:** "O CPF não é válido";
 
 * O CPF deve ser persistido no banco sem separadores
@@ -94,8 +96,6 @@ Caso execute e queira logar no sistema, o usuário é **admin** e a senha **pass
 alugados. 
 **Mensagem de validação:** Nenhuma. Uma Exception deverá lançada;
 
-* **Bugs já reportados não devem ser duplicados. Podem ser adicionadas novas informações nos comentários**
-
 # Exemplos de teste nas Classes do Spring Boot
 ## Teste na controller
 ```java
@@ -149,4 +149,21 @@ public class UsuarioRepositoryExemploTeste {
         assertThat(u.getNome(),is("Foo"));
     }
 }
+```
+## Teste na Entity
+```java
+@Test
+    public void naoDeveValidarUmNomeComDoisCaracteres() {
+        Cliente cliente = new Cliente();
+        cliente.setNome("An");
+
+        Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
+        Iterator it = violations.iterator();
+        //while(it.hasNext()){
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        // }
+
+        assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
+    }
 ```
