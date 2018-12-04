@@ -1,5 +1,7 @@
 # Trabalho recuperativo - Teste de Software
 
+## Atente para os requisitos, datas e regras para todas as ações
+
 **Para começar:** Tirar um fork do projeto. 
 
 **Entrega** Ao finalizar as tarefas, submeter um <code>pull request</code> com os testes gerados. O pull request deverá ser enviado no dia 10, entre as 18h e 19h. **Nem antes, nem depois**.
