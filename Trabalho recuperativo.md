@@ -4,7 +4,7 @@
 
 **Entrega** Ao finalizar as tarefas, submeter um <code>pull request</code> com os testes gerados. O pull request deverá ser enviado no dia 10, entre as 18h e 19h. **Nem antes, nem depois**
 
-**Atenção!** Para cada bug detectado deverá ser aberta uma Issue com o devido relato. No caso do bug já ter sido relatado por um colega, o relato não deve se repetir, mas pode receber adendos nos comentários.
+**Atenção!** Para cada bug detectado deverá ser aberta uma Issue com o devido relato (a qualquer momento a Issue pode ser aberta). No caso do bug já ter sido relatado por um colega, o relato não deve se repetir, mas pode receber adendos nos comentários. **Leia o [Guia de Contribuição](https://github.com/angelogluz/LocadoraSpringBoot/blob/master/CONTRIBUTING.md) antes**
 
 Criar os testes para validar os requisitos especificados na sequencia.
 
