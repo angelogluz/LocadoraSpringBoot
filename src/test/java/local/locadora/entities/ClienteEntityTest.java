@@ -34,6 +34,9 @@ public class ClienteEntityTest {
      * Note que <b>validator</b> aplica a validação do bean validation
      * O Iterator é utilizado para pegar as violações ocorridas
      */
+    
+    //O campo nome deve ser um valor entre 4 e 50, inclusive Mensagem de validação: "Um nome deve possuir entre 4 e 50 caracteres";
+    //****************************************************************************************************************************
     @Test
     public void naoDeveValidarUmNomeComDoisCaracteres() {
         Cliente cliente = new Cliente();
@@ -48,5 +51,32 @@ public class ClienteEntityTest {
 
         assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
     }
+    
+    //Testando 51 caracteres
+     @Test
+    public void naoDeveValidarUmNomeComCinquentaUmCaracteres() {
+        Cliente cliente = new Cliente();
+        cliente.setNome("qwertyuioxqwertyuioxqwertyuioxqwertyuioxqwertyuioxq");
+        
+          Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
+    }
+    
+    //Testando com quatro caracteres
+      @Test
+    public void DeveValidarUmNomeComQuatroCaracteres() {
+        Cliente cliente = new Cliente();
+        cliente.setNome("Rafa");
+        
+            Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
+    }
+        
 }
 
