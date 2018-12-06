@@ -64,21 +64,38 @@ public class FilmeEntityTest {
         
     }
     //O nome deve possuir entre 2 e 100 caracteres, inclusive. Mensagem de validação: "Um filme deve possuir entre 2 e 100 caracteres";
-    public void naoDeveValidarUmNomeComMenosDeDoisCaracteres() {
-        
-    }
+    
     public void naoDeveValidarUmNomeComMaisDeCemCaracteres() {
+         Filme filme = new Filme();
+        filme.setNome("qwertyuioxqwertyuioxqwertyuioxqwertyuioxqwertyuioxqqwertyuioxqwertyuioxqwertyuioxqwertyuioxqwertyuiCI");
         
+          Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres"));
     }
-    public void deveValidarUmNomeComCemCaracteres() {
+    public void naoDeveValidarUmNomeComUmCaractere() {
+        Filme filme = new Filme();
+        filme.setNome("x");
         
+        Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres"));
     }
-    public void deveValidarUmNomeComDoisCaracteres() {
-        
-    }
-    //O estoque do filme não pode ser negativo Mensagem de validação: "O Estoque deve ser positivo";
+    
+//O estoque do filme não pode ser negativo Mensagem de validação: "O Estoque deve ser positivo";
      public void naoDeveValidarEstoqueFilmeNegativo() {
+        Filme filme = new Filme();
+        filme.setEstoque(-1);
         
+          Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        assertThat(message, is("O Estoque deve ser positivo"));
     }
     //O valor da locação não deverá ultrapassar dois dígitos e o número de casas após a vírgula deverá ser dois. Mensagem de validação: "O Preço deve ter no máximo dois dígitos";
       public void naoDeveValidarValorComDoisDigitos() {
@@ -90,10 +107,17 @@ public class FilmeEntityTest {
     }
     //O valor da locação do filme deverá ser positivo Mensagem de validação: "O Valor da locação deve ser positivo";
       public void naoDeveValidarValorLocacaoNegativo() {
+        Filme filme = new Filme();
+        filme.setPrecoLocacao(-2.00);
         
+        Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        assertThat(message, is("O Valor da locação deve ser positivo"));
     }
-      public void deveValidarValorLocacaoPositivo() {
+     // public void deveValidarValorLocacaoPositivo() {
         
-    }
+   // }
 }
 
