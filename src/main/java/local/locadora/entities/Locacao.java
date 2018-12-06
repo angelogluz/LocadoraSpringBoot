@@ -109,4 +109,8 @@ public class Locacao implements Serializable {
         this.id = id;
     }
 
+    void setDataLocacao(String data) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
