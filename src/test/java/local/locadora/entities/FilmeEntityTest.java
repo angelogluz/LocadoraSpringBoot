@@ -23,7 +23,7 @@ public class FilmeEntityTest {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
     }
-
+    
     @Test
     public void filmeDeveTerEntreDoisECemCaracteres() {
         Filme filme = new Filme();
@@ -36,6 +36,24 @@ public class FilmeEntityTest {
         // }
 
         assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres"));
+    }
+    
+    public void naoDeveValidarUmNomeComMaisDeCemCaracteres() {
+         Filme filme = new Filme();
+        filme.setNome("testesabcdefghijklmnopqrstuvxzABCDEFGHIJKLMNOPQRSTUVXZTestestestesabcdefghijklmnopqrstuvxzABCDEFGHIJKLMNOPQRSTUVXZTestes");
+        
+          Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres"));
+    }
+    
+    @Test
+    public void naoDeveAceitarEspacoEmBrancoNoInicioEnoFim() {
+        Filme filme = new Filme();
+        filme.setNome("  Filme  ");
+        assertThat(filme.getNome(), is("Filme"));
     }
 
     @Test
@@ -72,23 +90,5 @@ public class FilmeEntityTest {
         String msg = x.getMessage();
 
         assertThat(msg, is("O Valor da locação deve ser positivo"));
-    }
-    
-    public void naoDeveValidarUmNomeComMaisDeCemCaracteres() {
-         Filme filme = new Filme();
-        filme.setNome("testesabcdefghijklmnopqrstuvxzABCDEFGHIJKLMNOPQRSTUVXZTestestestesabcdefghijklmnopqrstuvxzABCDEFGHIJKLMNOPQRSTUVXZTestes");
-        
-          Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
-        Iterator it = violations.iterator();
-        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
-        String message = x.getMessage();
-        assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres"));
-    }
-    
-    @Test
-    public void naoDeveAceitarEspacoEmBrancoNoInicioEnoFim() {
-        Filme filme = new Filme();
-        filme.setNome("  Filme  ");
-        assertThat(filme.getNome(), is("Filme"));
     }
 }
