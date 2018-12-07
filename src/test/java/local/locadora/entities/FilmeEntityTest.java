@@ -73,4 +73,15 @@ public class FilmeEntityTest {
 
         assertThat(msg, is("O Valor da locação deve ser positivo"));
     }
+    
+    public void naoDeveValidarUmNomeComMaisDeCemCaracteres() {
+         Filme filme = new Filme();
+        filme.setNome("qwertyuioxqwertyuioxqwertyuioxqwertyuioxqwertyuioxqqwertyuioxqwertyuioxqwertyuioxqwertyuioxqwertyuiCI");
+        
+          Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres"));
+    }
 }
