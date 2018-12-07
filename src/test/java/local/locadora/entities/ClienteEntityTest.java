@@ -50,6 +50,21 @@ public class ClienteEntityTest {
     }
     
     @Test
+    public void naoDeveValidarComMaisDeCinquentaCaracteres() {
+        Cliente cliente = new Cliente();
+        cliente.setNome("testesabcdefghijklmnopqrstuvxzABCDEFGHIJKLMNOPQRSTUVXZTestes");
+
+        Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
+        Iterator it = violations.iterator();
+        //while(it.hasNext()){
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        // }
+
+        assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
+    }
+    
+    @Test
     public void validarSeNomeTemNumerosOuSimbolos() {
         Cliente cliente = new Cliente();
         cliente.setNome("Leandro !123");
