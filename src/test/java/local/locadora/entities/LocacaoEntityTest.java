@@ -19,6 +19,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 public class LocacaoEntityTest {
@@ -108,5 +109,23 @@ public class LocacaoEntityTest {
         String msg = x.getMessage();
 
         assertThat(msg, is("O Preço deve ter no máximo dois dígitos"));
+    }
+    
+    @Test
+    public void deveSerSelecionadoUmCliente() {
+        Locacao locacao = new Locacao();
+        
+        locacao.setDataLocacao(DataUtils.obterData(20, 12, 2018));
+        locacao.setDataRetorno(DataUtils.obterData(28, 12, 2018));
+        locacao.setCliente(null);
+        
+        locacao.setValor(2.0);
+        Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+
+        String msg = x.getMessage();
+
+        assertThat(msg, is("Um cliente deve ser selecionado"));
     }
 }
