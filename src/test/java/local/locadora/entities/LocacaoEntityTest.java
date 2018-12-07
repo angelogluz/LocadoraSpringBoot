@@ -121,4 +121,22 @@ public class LocacaoEntityTest {
 
         assertThat(msg, is("Um cliente deve ser selecionado"));
     }
+    
+    @Test
+    public void deveSelecionarUmFilme() {
+        Locacao locacao = new Locacao();
+        
+        locacao.setDataLocacao(DataUtils.obterData(20, 12, 2018));
+        locacao.setDataRetorno(DataUtils.obterData(28, 12, 2018));
+        locacao.setFilmes(null);
+        
+        locacao.setValor(2.0);
+        Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+
+        String msg = x.getMessage();
+
+        assertThat(msg, is("Pelo menos um filme deve ser selecionado"));
+    }
 }
