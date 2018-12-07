@@ -76,7 +76,7 @@ public class FilmeEntityTest {
     
     public void naoDeveValidarUmNomeComMaisDeCemCaracteres() {
          Filme filme = new Filme();
-        filme.setNome("qwertyuioxqwertyuioxqwertyuioxqwertyuioxqwertyuioxqqwertyuioxqwertyuioxqwertyuioxqwertyuioxqwertyuiCI");
+        filme.setNome("testesabcdefghijklmnopqrstuvxzABCDEFGHIJKLMNOPQRSTUVXZTestestestesabcdefghijklmnopqrstuvxzABCDEFGHIJKLMNOPQRSTUVXZTestes");
         
           Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
         Iterator it = violations.iterator();

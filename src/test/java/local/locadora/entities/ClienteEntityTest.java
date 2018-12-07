@@ -104,5 +104,12 @@ public class ClienteEntityTest {
         // }
         assertThat(message, is("O CPF não é válido"));
     }
+    
+    @Test
+    public void naoDeveAceitarEspacoEmBrancoNoInicioEnoFim() {
+        Cliente cliente = new Cliente();
+        cliente.setNome("  Leandro  ");
+        assertThat(cliente.getNome(), is("Leandro"));
+    }
 }
 
