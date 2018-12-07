@@ -84,4 +84,11 @@ public class FilmeEntityTest {
         String message = x.getMessage();
         assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres"));
     }
+    
+    @Test
+    public void naoDeveAceitarEspacoEmBrancoNoInicioEnoFim() {
+        Filme filme = new Filme();
+        filme.setNome("  Filme  ");
+        assertThat(filme.getNome(), is("Filme"));
+    }
 }
