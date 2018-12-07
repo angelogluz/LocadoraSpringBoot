@@ -1,25 +1,18 @@
 package local.locadora.entities;
 
 import local.locadora.utils.DataUtils;
-import org.hibernate.query.criteria.internal.expression.function.CurrentDateFunction;
-import org.hibernate.query.criteria.internal.expression.function.CurrentTimeFunction;
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
-import java.sql.Time;
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 public class LocacaoEntityTest {
