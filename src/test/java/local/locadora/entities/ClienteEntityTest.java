@@ -12,7 +12,10 @@ import java.util.Iterator;
 import java.util.Set;
 
 import static org.hamcrest.core.Is.is;
+import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
@@ -65,16 +68,6 @@ public class ClienteEntityTest {
     }
 
     @Test
-    public void primeiraLetraDoNomeSobrenomeDeveSerMaiuscula() {
-        Cliente cliente = new Cliente();
-
-        cliente.setNome("leandro santos");
-
-        assertThat(cliente.getNome(), is("Leandro Santos"));
-        fail();
-    }
-
-    @Test
     public void validarSeNomeTemNumerosOuSimbolos() {
         Cliente cliente = new Cliente();
         cliente.setNome("Leandro !123");
@@ -120,5 +113,42 @@ public class ClienteEntityTest {
         Cliente cliente = new Cliente();
         cliente.setNome("  Leandro  ");
         assertThat(cliente.getNome(), is("Leandro"));
+    }
+
+    @Test
+    public void primeiraLetraDoNomeSobrenomeDeveSerMaiuscula() {
+
+//        Cliente cliente = new Cliente();
+//        cliente.setNome("leandro santos");
+//        
+//        assertThat(cliente.getNome(), is("Leandro Santos"));
+//        assertEquals("Leandro Santos", cliente.getNome());
+//        assertTrue(cliente.getNome().equals("Leandro Santos"));
+        try {
+            Cliente cliente = new Cliente();
+            cliente.setNome("leandro santos");
+
+            assertThat(cliente.getNome(), is("Leandro Santos"));
+
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+
+    @Test
+    public void nomeDoClienteDeveSerCampoUnico() {
+        Cliente cliente1 = new Cliente();
+        Cliente cliente2 = new Cliente();
+
+        try {
+            cliente1.setNome("Leandro");
+            cliente2.setNome("Leandro");
+            Assert.fail();
+
+        } catch (Exception e) {
+            Object ExceptionCliente = null;
+            Assert.assertSame(ExceptionCliente, e);
+        }
     }
 }
