@@ -33,7 +33,7 @@ public class ClienteEntityTest {
 
     
     @Test
-    public void naoPodeValidarAbaixoDeDoisCaracteres() {
+    public void naoPodeValidarAbaixoDeQuatroCaracteres() {
         Cliente cliente = new Cliente();
         cliente.setNome("Cu");
         Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
@@ -57,7 +57,7 @@ public class ClienteEntityTest {
     }
 
     @Test
-    public void validarSeNomeTemNumerosOuSimbolos() {
+    public void naoValidarSeNomeTemNumerosOuSimbolos() {
         Cliente cliente = new Cliente();
         cliente.setNome("Godinilson 1!2>3º");
         Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
@@ -68,22 +68,10 @@ public class ClienteEntityTest {
     }
 
     @Test
-    public void naoValidarCPFComMenosDeOnceDigitos() {
+    public void naoValidarCPFComMenosDeOnzeDigitos() {
         Cliente cliente = new Cliente();
         cliente.setNome("Godinilson");
         cliente.setCpf("123456789");
-        Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
-        Iterator it = violations.iterator();
-        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
-        String message = x.getMessage();
-        assertThat(message, is("O CPF não é válido"));
-    }
-    
-    @Test
-    public void naoValidarCPFcomMaisDeOnceDigitos() {
-        Cliente cliente = new Cliente();
-        cliente.setNome("Godinilson");
-        cliente.setCpf("12345678910");
         Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
         Iterator it = violations.iterator();
         ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
@@ -133,11 +121,12 @@ public class ClienteEntityTest {
         try {
             cliente1.setNome("Godinilson");
             cliente2.setNome("Godinilson");
-            Assert.fail();
+             Assert.assertSame(cliente1.getNome(), cliente2.getNome());
+             Assert.fail("Sistema não cumpre com os requisitos");
 
         } catch (Exception e) {
             Object ExceptionCliente = null;
-            Assert.assertSame(ExceptionCliente, e);
+            Assert.assertNotSame(cliente1.getNome(), cliente2.getNome());
         }
     }
 }

@@ -40,7 +40,7 @@ public class LocacaoEntityTest {
     @Test
     public void dataDeLocacaoNaoPodeSerNulo() {
         Locacao locacao = new Locacao();
-        locacao.setDataRetorno(DataUtils.obterData(28, 12, 2018));
+        locacao.setDataRetorno(DataUtils.obterData(27, 12, 2018));
         locacao.setValor(5.00);
         Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
         Iterator it = violations.iterator();
@@ -54,8 +54,8 @@ public class LocacaoEntityTest {
     @Test
     public void dataDeRetornoDeveSerFutura() {
         Locacao locacao = new Locacao();
-        locacao.setDataLocacao(DataUtils.obterData(20, 12, 2018));
-        locacao.setDataRetorno(DataUtils.obterData(28, 12, 2010));
+        locacao.setDataLocacao(DataUtils.obterData(17, 12, 2018));
+        locacao.setDataRetorno(DataUtils.obterData(27, 12, 1995));
         locacao.setValor(2.00);
         Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
         Iterator it = violations.iterator();
@@ -67,8 +67,8 @@ public class LocacaoEntityTest {
     @Test
     public void valorDaLocacaoDeveSerPositivo() {
         Locacao locacao = new Locacao();   
-        locacao.setDataLocacao(DataUtils.obterData(20, 12, 2018));
-        locacao.setDataRetorno(DataUtils.obterData(28, 12, 2018));
+        locacao.setDataLocacao(DataUtils.obterData(17, 12, 2018));
+        locacao.setDataRetorno(DataUtils.obterData(27, 12, 2018));
         locacao.setValor(-10.00);
         Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
         Iterator it = violations.iterator();
@@ -80,8 +80,8 @@ public class LocacaoEntityTest {
     @Test
     public void valorDeveTerNomaximoDoisDigitos() {
         Locacao locacao = new Locacao();
-        locacao.setDataLocacao(DataUtils.obterData(20, 12, 2018));
-        locacao.setDataRetorno(DataUtils.obterData(28, 12, 2018));
+        locacao.setDataLocacao(DataUtils.obterData(17, 12, 2018));
+        locacao.setDataRetorno(DataUtils.obterData(27, 12, 2018));
         locacao.setValor(987.654);
         Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
         Iterator it = violations.iterator();
@@ -93,8 +93,8 @@ public class LocacaoEntityTest {
     @Test
     public void umClienteDeveSerSelecionado() {
         Locacao locacao = new Locacao();
-        locacao.setDataLocacao(DataUtils.obterData(20, 12, 2018));
-        locacao.setDataRetorno(DataUtils.obterData(28, 12, 2018));
+        locacao.setDataLocacao(DataUtils.obterData(17, 12, 2018));
+        locacao.setDataRetorno(DataUtils.obterData(27, 12, 2018));
         locacao.setCliente(null);
         locacao.setValor(2.0);
         Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
@@ -107,8 +107,8 @@ public class LocacaoEntityTest {
     @Test
     public void UmFilmeDeveSerSelecionado() {
         Locacao locacao = new Locacao();
-        locacao.setDataLocacao(DataUtils.obterData(20, 12, 2018));
-        locacao.setDataRetorno(DataUtils.obterData(28, 12, 2018));
+        locacao.setDataLocacao(DataUtils.obterData(17, 12, 2018));
+        locacao.setDataRetorno(DataUtils.obterData(27, 12, 2018));
         locacao.setFilmes(null);
         locacao.setValor(2.0);
         Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
