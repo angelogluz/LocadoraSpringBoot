@@ -13,9 +13,7 @@ import java.util.Set;
 
 import static org.hamcrest.core.Is.is;
 import org.junit.Assert;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
@@ -68,7 +66,7 @@ public class ClienteEntityTest {
     }
 
     @Test
-    public void validarSeNomeTemNumerosOuSimbolos() {
+    public void naoValidarSeNomeTemNumerosOuSimbolos() {
         Cliente cliente = new Cliente();
         cliente.setNome("Leandro !123");
         Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
@@ -81,7 +79,7 @@ public class ClienteEntityTest {
     }
 
     @Test
-    public void validarCPF() {
+    public void naoValidarCPF() {
         Cliente cliente = new Cliente();
         cliente.setNome("Leandro");
         cliente.setCpf("123456789");
@@ -134,7 +132,6 @@ public class ClienteEntityTest {
             fail();
         }
     }
-
 
     @Test
     public void nomeDoClienteDeveSerCampoUnico() {
