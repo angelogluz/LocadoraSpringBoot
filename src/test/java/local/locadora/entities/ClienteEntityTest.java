@@ -1,4 +1,3 @@
-
 package local.locadora.entities;
 
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
@@ -14,13 +13,14 @@ import java.util.Set;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 
 public class ClienteEntityTest {
 
     private static Validator validator;
-    
+
     @Rule
     public ExpectedException expected = ExpectedException.none();
 
@@ -48,7 +48,7 @@ public class ClienteEntityTest {
 
         assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
     }
-    
+
     @Test
     public void naoDeveValidarComMaisDeCinquentaCaracteres() {
         Cliente cliente = new Cliente();
@@ -63,7 +63,17 @@ public class ClienteEntityTest {
 
         assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
     }
-    
+
+    @Test
+    public void primeiraLetraDoNomeSobrenomeDeveSerMaiuscula() {
+        Cliente cliente = new Cliente();
+
+        cliente.setNome("leandro santos");
+
+        assertThat(cliente.getNome(), is("Leandro Santos"));
+        fail();
+    }
+
     @Test
     public void validarSeNomeTemNumerosOuSimbolos() {
         Cliente cliente = new Cliente();
@@ -104,7 +114,7 @@ public class ClienteEntityTest {
         // }
         assertThat(message, is("O CPF não é válido"));
     }
-    
+
     @Test
     public void naoDeveAceitarEspacoEmBrancoNoInicioEnoFim() {
         Cliente cliente = new Cliente();
@@ -112,4 +122,3 @@ public class ClienteEntityTest {
         assertThat(cliente.getNome(), is("Leandro"));
     }
 }
-
