@@ -109,8 +109,5 @@ public class Locacao implements Serializable {
         this.id = id;
     }
 
-    void setCliente(String joao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }

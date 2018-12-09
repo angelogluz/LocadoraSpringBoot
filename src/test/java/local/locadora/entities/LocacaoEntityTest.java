@@ -42,38 +42,55 @@ public class LocacaoEntityTest {
     /* Uma locação não deverá ser realizada sem um 
     cliente Mensagem de validação: "Um cliente deve ser selecionado"; */
     @Test
-    public void naoDeveLocarFilmeSemUsuario() {
-        //Cenário
-        Cliente cliente = new Cliente();
-        Locacao locacao = new Locacao();
-
-        //Processamento e validação
-        try {
-            //TODO: Corrigir parâmetro para teste
-            locacao.setCliente(cliente);
-            fail("Locação realizada com usuário null");
-        }catch (Exception ex){
-            assertEquals("Um cliente deve ser selecionado",ex.getMessage());
-            assertThat(ex.getMessage(),is(equalTo("Um cliente deve ser selecionado")));
-        }
-    }
-
-    @Test
-    public void deveSerSelecionadoUmCliente() {
+    public void nãoDeveLocarSemCliente() {
         Locacao locacao = new Locacao();
         
-        locacao.setDataLocacao(DataUtils.obterData(20, 12, 2018));
-        locacao.setDataRetorno(DataUtils.obterData(28, 12, 2018));
+        locacao.setDataLocacao(DataUtils.obterData(12, 12, 2018));
+        locacao.setDataRetorno(DataUtils.obterData(20, 12, 2018));
+        locacao.setCliente(null);
         
-        locacao.setValor(2.0);
+        locacao.setValor(5.0);
         Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
         Iterator it = violations.iterator();
         ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
-
         String msg = x.getMessage();
 
         assertThat(msg, is("Um cliente deve ser selecionado"));
     }
+    
+    @Test
+    public void umClienteDeveSerSelecionado() {
+        Locacao locacao = new Locacao();
+        locacao.setDataLocacao(DataUtils.obterData(17, 12, 2018));
+        locacao.setDataRetorno(DataUtils.obterData(27, 12, 2018));
+        locacao.setCliente(null);
+        locacao.setValor(2.0);
+        
+        Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
+        Iterator it = violations.iterator();
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        
+        String msg = x.getMessage();
+        
+        assertThat(msg, is("Um cliente deve ser selecionado"));
+    }
+
+//    @Test
+//    public void deveSerSelecionadoUmCliente() {
+//        Locacao locacao = new Locacao();
+//        
+//        locacao.setDataLocacao(DataUtils.obterData(20, 12, 2018));
+//        locacao.setDataRetorno(DataUtils.obterData(28, 12, 2018));
+//        locacao.setValor(2.0);
+//        
+//        Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
+//        Iterator it = violations.iterator();
+//        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+//
+//        String msg = x.getMessage();
+//
+//        assertThat(msg, is("Um cliente deve ser selecionado"));
+//    }
     
      /* Uma locação deverá possuir pelo menos 1 filme 
     Mensagem de validação: "Pelo menos um filme deve ser selecionado"; */
@@ -202,8 +219,12 @@ public class LocacaoEntityTest {
         Date dataDeLocacao = new Date();
 	Date dataDeEntrega = new Date();
         
+        Cliente cliente = new Cliente();
+        cliente.setNome("Edecio");
+        cliente.setCpf("123.456.789-09");
+        
         Locacao locacao = new Locacao();
-        locacao.setCliente("joao");
+        locacao.setCliente(cliente);
             	
 	assumeTrue(DataUtils.verificarDiaSemana(dataDeLocacao, Calendar.SATURDAY));
 	String data="";
