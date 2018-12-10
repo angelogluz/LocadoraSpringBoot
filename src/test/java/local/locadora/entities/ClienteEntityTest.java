@@ -1,6 +1,6 @@
-
 package local.locadora.entities;
 
+import ch.qos.logback.classic.pattern.Util;
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,16 +11,18 @@ import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import java.util.Iterator;
 import java.util.Set;
+import javax.validation.constraints.AssertTrue;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 
 public class ClienteEntityTest {
 
     private static Validator validator;
-    
+
     @Rule
     public ExpectedException expected = ExpectedException.none();
 
@@ -31,8 +33,8 @@ public class ClienteEntityTest {
     }
 
     /**
-     * Note que <b>validator</b> aplica a validação do bean validation
-     * O Iterator é utilizado para pegar as violações ocorridas
+     * Note que <b>validator</b> aplica a validação do bean validation O
+     * Iterator é utilizado para pegar as violações ocorridas
      */
     @Test
     public void naoDeveValidarUmNomeComDoisCaracteres() {
@@ -49,4 +51,3 @@ public class ClienteEntityTest {
         assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
     }
 }
-
