@@ -13,7 +13,6 @@ import java.util.Iterator;
 import java.util.Set;
 
 import static org.hamcrest.core.Is.is;
-import org.junit.Assert;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import org.junit.Rule;
@@ -64,6 +63,7 @@ public class ClienteEntityTest {
         
         Cliente cliente = new Cliente();
         cliente.setCpf(cpf);
+        cliente.setNome("Juca Biluca");
         
         Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
         Iterator it = violations.iterator();
@@ -122,21 +122,23 @@ public class ClienteEntityTest {
      }
      
      
-     /* O nome do cliente deverá ser um campo único 
-     Mensagem de validação: Não possui. Lançará uma Exception; */
+    /* O nome do cliente deverá ser um campo único 
+    Mensagem de validação: Não possui. Lançará uma Exception; */
     @Test
-    public void nomeDoClienteDeveSerCampoUnico() {
-        Cliente cliente1 = new Cliente();
-        Cliente cliente2 = new Cliente();
+    public void NomeDeveSerCampoUnico() throws Exception {
+        Filme filme = new Filme();
+        filme.setNome("B");
 
-        try {
-            cliente1.setNome("salomao");
-            cliente2.setNome("salomao");
-            Assert.fail();
-
-        } catch (Exception e) {
-            Object ExceptionCliente = null;
-            Assert.assertSame(ExceptionCliente, e);
+        Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
+        Iterator it = violations.iterator();
+        //while(it.hasNext()){
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        //}
+     try{
+            assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres"));
+        }catch(Exception e){
+             throw new Exception("Campo unico", e);
         }
     }
      

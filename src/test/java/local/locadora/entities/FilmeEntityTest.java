@@ -34,18 +34,21 @@ public class FilmeEntityTest {
     
     /* O nome deverá ser um campo único Mensagem de validação: 
     Não possui. Lançará uma Exception; */
-     @Test
-    public void nomeDeveraSerUnico() {
-        Filme filme1 = new Filme();
-        Filme filme2 = new Filme();
-        try {
-            filme1.setNome("Galaxia");
-            filme2.setNome("Galaxia");
-            Assert.fail();
-            //Lancará uma exception;
-        } catch (Exception e) {
-            Object ExceptionFilme = null;
-            Assert.assertSame(ExceptionFilme, e);
+    @Test
+    public void nomeDeveraSerUnico() throws Exception {
+       Filme filme = new Filme();
+        filme.setNome("B");
+
+        Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
+        Iterator it = violations.iterator();
+        //while(it.hasNext()){
+        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
+        String message = x.getMessage();
+        //}
+     try{
+            assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres"));
+        }catch(Exception e){
+            throw new Exception("Campo unico", e);
         }
     }
     
