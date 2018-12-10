@@ -14,7 +14,7 @@ import static org.assertj.core.api.Fail.fail;
 
 
 public class ClienteEntityTest {
-
+//aa
     private static Validator validator;
 
     @Before
