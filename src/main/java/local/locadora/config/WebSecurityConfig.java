@@ -44,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
         auth.inMemoryAuthentication()
-                .withUser("angelogl@gmail.com").password("123").roles("ADMIN");
+                .withUser("admin").password("password").roles("ADMIN");
 
     }
 

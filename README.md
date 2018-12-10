@@ -36,3 +36,7 @@ Neste caso, remova todo conteúdo da pasta <code> \~/AppData/Local/Netbeans/Cach
 e também do diretório <code> \~/AppData/Roaming/Netbeans/8.2/var</code>. Onde "8.2" representa a versão da IDE instalada.
 
 
+#Configurar Conexão com o banco de dados
+Acessar `LocadoraSpringBoot\src\main\resources\application.properties`
+E alterar `spring.datasource.username=root` para o login do banco e 
+`spring.datasource.password=` com a senha do banco.
