@@ -8,6 +8,7 @@ package local.locadora.entities;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -19,6 +20,7 @@ import local.locadora.utils.DataUtils;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.core.Is.is;
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -115,8 +117,20 @@ public class LocacaoEntityTest {
     /* Uma locação de filme sem estoque não poderá ser realizada 
     Mensagem de validação: Sem mensagem. Uma Exception deverá ser lançada; */
     @Test
-    public void naoDeveraRealizarUmaLocacaoSemEstoque(){
-        
+    public void naoDeveValidarUmaLocacaoDeFilmeSemEstoque() {
+        //Cenário
+        Locacao locacao = new Locacao();
+        Filme filme = new Filme("Matrix", 0, 4.0);
+
+        //Ação
+        try {
+            locacao.addFilme(filme);
+            fail();
+        } catch (Exception e) {
+            Object ExceptionLocacao = null;
+            
+            Assert.assertSame(ExceptionLocacao, e);
+        }
     }
     
     /* Uma locação não pode ser realizada sem data de 

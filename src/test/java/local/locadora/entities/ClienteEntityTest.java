@@ -13,6 +13,8 @@ import java.util.Iterator;
 import java.util.Set;
 
 import static org.hamcrest.core.Is.is;
+import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import org.junit.Rule;
@@ -184,6 +186,36 @@ public class ClienteEntityTest {
         String message = x.getMessage();
         // }
         assertThat(message, is("O CPF não é válido"));
+    }
+    
+    @Test
+    public void deveSerUnicoONome() {
+        //Cenário
+        Cliente cliente1 = new Cliente();
+        Cliente cliente2 = new Cliente();
+        
+        //Ação
+        try {
+
+            cliente1.setNome("Salomao");
+            cliente2.setNome("Salomao");
+            fail();
+
+        } catch (Exception e) {
+            //Validação
+            Object ExceptionCliente = null;
+            Assert.assertSame(ExceptionCliente, e);
+        }
+    }
+    
+     @Test
+    public void devePersistirCPFNoBancoSemSeparadores() {
+        //Cenário
+        Cliente cliente = new Cliente();
+        //Ação
+        cliente.setCpf("005.506.790-57");
+        //Validação
+        assertEquals("00550679057", cliente.getCpf());
     }
  
 }
