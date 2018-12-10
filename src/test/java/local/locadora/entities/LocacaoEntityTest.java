@@ -73,22 +73,6 @@ public class LocacaoEntityTest {
         assertThat(msg, is("Um cliente deve ser selecionado"));
     }
 
-//    @Test
-//    public void deveSerSelecionadoUmCliente() {
-//        Locacao locacao = new Locacao();
-//        
-//        locacao.setDataLocacao(DataUtils.obterData(20, 12, 2018));
-//        locacao.setDataRetorno(DataUtils.obterData(28, 12, 2018));
-//        locacao.setValor(2.0);
-//        
-//        Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
-//        Iterator it = violations.iterator();
-//        ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
-//
-//        String msg = x.getMessage();
-//
-//        assertThat(msg, is("Um cliente deve ser selecionado"));
-//    }
     
      /* Uma locação deverá possuir pelo menos 1 filme 
     Mensagem de validação: "Pelo menos um filme deve ser selecionado"; */
@@ -114,11 +98,9 @@ public class LocacaoEntityTest {
     Mensagem de validação: Sem mensagem. Uma Exception deverá ser lançada; */
     @Test
     public void naoDeveValidarUmaLocacaoDeFilmeSemEstoque() {
-        //Cenário
         Locacao locacao = new Locacao();
         Filme filme = new Filme("Matrix", 0, 4.0);
 
-        //Ação
         try {
             locacao.addFilme(filme);
         } catch (Exception e) {

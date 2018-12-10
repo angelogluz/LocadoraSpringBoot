@@ -9,7 +9,6 @@ import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import static org.hamcrest.core.Is.is;
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -37,11 +36,11 @@ public class FilmeEntityTest {
 
         Set<ConstraintViolation<Filme>> violations = validator.validate(filme);
         Iterator it = violations.iterator();
-        //while(it.hasNext()){
+
         ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
         String message = x.getMessage();
-        //}
-     try{
+
+        try{
             assertThat(message, is("Um filme deve possuir entre 2 e 100 caracteres"));
         }catch(Exception e){
             throw new Exception("Campo unico", e);
@@ -141,10 +140,5 @@ public class FilmeEntityTest {
         String message = x.getMessage();
         
         assertThat(message, is("O Valor da locação deve ser positivo"));	
-    }
-    
-    
-      
-    
-   
+    }  
 }

@@ -32,11 +32,6 @@ public class ClienteEntityTest {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
     }
-
-    /**
-     * Note que <b>validator</b> aplica a validação do bean validation
-     * O Iterator é utilizado para pegar as violações ocorridas
-     */
     
     /* O campo nome deve ser um valor entre 4 e 50, inclusive 
     Mensagem de validação: "Um nome deve possuir entre 4 e 50 caracteres"; */
@@ -47,10 +42,9 @@ public class ClienteEntityTest {
 
         Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
         Iterator it = violations.iterator();
-        //while(it.hasNext()){
+
         ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
         String message = x.getMessage();
-        // }
 
         assertThat(message, is("Um nome deve possuir entre 4 e 50 caracteres"));
     }
@@ -190,19 +184,15 @@ public class ClienteEntityTest {
     
     @Test
     public void deveSerUnicoONome() {
-        //Cenário
         Cliente cliente1 = new Cliente();
         Cliente cliente2 = new Cliente();
         
-        //Ação
         try {
 
             cliente1.setNome("Salomao");
             cliente2.setNome("Salomao");
-           // fail();
 
         } catch (Exception e) {
-            //Validação
             Object ExceptionCliente = null;
             Assert.assertSame(ExceptionCliente, e);
         }
@@ -210,11 +200,9 @@ public class ClienteEntityTest {
     
      @Test
     public void devePersistirCPFNoBancoSemSeparadores() {
-        //Cenário
         Cliente cliente = new Cliente();
-        //Ação
         cliente.setCpf("00550679057");
-        //Validação
+
         assertEquals("00550679057", cliente.getCpf());
     }
  
