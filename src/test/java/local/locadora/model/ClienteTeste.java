@@ -104,7 +104,7 @@ public class ClienteTeste {
     public void nomeNaoPodeTerMaisQueCinquentaCaracteres() {
         Cliente c = new Cliente("JoaoVicenteJosedaSilvadeOleanseBragançadaFonsecaDeMachado");
 
-        //assertThat(c.getNome(), is(equalTo("JoaoVicenteJosedaSilvadeOleanseBragançadaFonsecaDeMachado")));
+       // assertThat(c.getNome(), is("JoaoVicenteJosedaSilvadeOleanseBragançadaFonsecaDeMachado"));
 
 //        exception.expect(ClienteException.class);
 //        exception.expectMessage("O nome do cliente deve possuir entre 4 e 55 caracteres");
