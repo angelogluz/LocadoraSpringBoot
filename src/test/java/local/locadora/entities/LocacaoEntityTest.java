@@ -18,6 +18,7 @@ import javax.validation.ValidatorFactory;
 import local.locadora.utils.DataUtils;
 import static org.hamcrest.core.Is.is;
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Rule;
@@ -46,8 +47,8 @@ public class LocacaoEntityTest {
         
         //Cenário
         List<Filme> filmes = new ArrayList();
-        filmes.add(new Filme("Rambo 1", 5, 3.0));
-        filmes.add(new Filme("Rambo 2", 0, 2.5));
+        filmes.add(new Filme("Rambo 1", 1, 3.00));
+        filmes.add(new Filme("Rambo 2", 1, 2.50));
         Locacao locacao = new Locacao();
         
         //Ação
@@ -92,7 +93,7 @@ public class LocacaoEntityTest {
         
         //Cenário
         List<Filme> filmes = new ArrayList<>();
-        filmes.add(new Filme("Rambo III", 0 ,12.50));
+        filmes.add(new Filme("Rambo III", 1 ,12.50));
         
         //Ação
         Locacao locacao = new Locacao();
@@ -125,8 +126,8 @@ public class LocacaoEntityTest {
         //Cenário
         Cliente cliente = new Cliente("Fabricio", "93786778000");
         List<Filme> filmes = new ArrayList();
-        filmes.add(new Filme("Rambo 1", 5, 3.0));
-        filmes.add(new Filme("Rambo 2", 0, 2.5));
+        filmes.add(new Filme("Rambo 1", 1, 3.00));
+        filmes.add(new Filme("Rambo 2", 1, 2.50));
         Locacao locacao = new Locacao();
         
         //Ação
@@ -150,8 +151,8 @@ public class LocacaoEntityTest {
         //Cenário
         Cliente cliente = new Cliente("Fabricio", "93786778000");
         List<Filme> filmes = new ArrayList();
-        filmes.add(new Filme("Rambo 1", 5, 3.0));
-        filmes.add(new Filme("Rambo 2", 0, 2.5));
+        filmes.add(new Filme("Rambo 1", 1, 3.00));
+        filmes.add(new Filme("Rambo 2", 1, 2.50));
         Locacao locacao = new Locacao();
         
         //Ação
@@ -175,8 +176,8 @@ public class LocacaoEntityTest {
         //Cenário
         Cliente cliente = new Cliente("Fabricio", "93786778000");
         List<Filme> filmes = new ArrayList();
-        filmes.add(new Filme("Rambo 1", 5, 3.0));
-        filmes.add(new Filme("Rambo 2", 0, 2.5));
+        filmes.add(new Filme("Rambo 1", 1, 3.00));
+        filmes.add(new Filme("Rambo 2", 1, 2.50));
         Locacao locacao = new Locacao();
         
         //Ação
@@ -200,8 +201,8 @@ public class LocacaoEntityTest {
         //Cenário
         Cliente cliente = new Cliente("Fabricio", "93786778000");
         List<Filme> filmes = new ArrayList();
-        filmes.add(new Filme("Rambo 1", 5, 3.0));
-        filmes.add(new Filme("Rambo 2", 0, 2.5));
+        filmes.add(new Filme("Rambo 1", 1, 3.00));
+        filmes.add(new Filme("Rambo 2", 1, 2.50));
         Locacao locacao = new Locacao();
         
         //Ação
@@ -225,8 +226,8 @@ public class LocacaoEntityTest {
         //Cenário
         Cliente cliente = new Cliente("Fabricio", "93786778000");
         List<Filme> filmes = new ArrayList();
-        filmes.add(new Filme("Rambo 1", 5, 3.0));
-        filmes.add(new Filme("Rambo 2", 0, 2.5));
+        filmes.add(new Filme("Rambo 1", 1, 3.00));
+        filmes.add(new Filme("Rambo 2", 1, 2.50));
         Locacao locacao = new Locacao();
         
         //Ação
@@ -250,7 +251,7 @@ public class LocacaoEntityTest {
         //Cenário
         Cliente cliente = new Cliente("Fabricio", "93786778000");
         List<Filme> filmes = new ArrayList();
-        filmes.add(new Filme("Rambo 1", 5, 3.55));
+        filmes.add(new Filme("Rambo 1", 1, 3.55));
         Locacao locacao = new Locacao();
         Date dt;
         
@@ -280,4 +281,34 @@ public class LocacaoEntityTest {
         */
     }
     
+    @Test
+    public void numeroDiasRecebimentoAumentadoPelosFilmes() {
+        
+        //Cenário
+        Cliente cliente = new Cliente("Fabricio", "93786778000");
+        List<Filme> filmes = new ArrayList();
+        filmes.add(new Filme("Rambo 1", 1, 3.00));
+        filmes.add(new Filme("Rambo 2", 1, 2.50));
+        Locacao locacao = new Locacao();
+        
+        //Ação
+        locacao.setCliente(cliente);
+        locacao.setFilmes(filmes);
+        locacao.setValor(5.50);
+        locacao.setDataRetorno(new Date("2018/12/09"));
+        locacao.setDataLocacao(new Date());
+        Calendar c = Calendar.getInstance();
+        c.setTime(locacao.getDataRetorno());
+        c.add(Calendar.DATE, 0);
+        locacao.setDataRetorno(c.getTime());
+        locacao.setDataLocacao(locacao.getDataRetorno());
+        c.add(Calendar.DATE, locacao.getFilmes().size());
+        locacao.setDataRetorno(c.getTime());
+        
+        //Validação
+        /*System.out.println(locacao.getFilmes().size());
+        System.out.println(locacao.getDataLocacao());
+        System.out.println(locacao.getDataRetorno());
+        assertSame(locacao.getDataLocacao(), locacao.getDataRetorno());*/
+    }
 }
