@@ -2,6 +2,7 @@
 package local.locadora.entities;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -10,7 +11,9 @@ import javax.validation.ValidatorFactory;
 import local.locadora.utils.DataUtils;
 import static org.hamcrest.core.Is.is;
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
+import org.junit.Assert;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -78,6 +81,30 @@ public class LocacaoEntityTest {
     /*Uma locação de filme sem estoque não poderá ser realizada Mensagem de validação:
     Sem mensagem. Uma Exception deverá ser lançada;*/
     
+     @Test
+    public void naoDeveValidarUmaLocacaoDeFilmeSemEstoque() {
+        //Cenário
+        Cliente cliente = new Cliente();
+        cliente.setNome("Jaco");
+        cliente.setCpf("999.999.888-88");
+         
+        Filme filme = new Filme();
+        filme.setNome("Deadpool");
+        filme.setEstoque(0);
+        filme.setPrecoLocacao(10.50);
+        
+        Locacao locacao = new Locacao();
+        locacao.setCliente(cliente);
+
+        try {
+            locacao.setFilmes((List<Filme>) filme);
+            fail();
+        } catch (Exception e) {
+            Object ExceptionLocacao = null;
+            Assert.assertSame(ExceptionLocacao, e);
+        }
+    }
+    
     /*Uma locação não pode ser realizada sem data de locação Mensagem de validação:
     "A data de locação não deve ser nula"*/
     
@@ -102,7 +129,15 @@ public class LocacaoEntityTest {
      @Test
     public void naoDeveFazerLocacaoSemDataDeRetorno() {
         Locacao locacao = new Locacao();
+        Cliente cliente = new Cliente();
+        List<Filme> filmes = null;
+        Filme filme = new Filme("Deadpool", 0, 10.50);
+        filmes.add(filme);
         
+        locacao.setCliente(cliente);
+        locacao.setFilmes(filmes);
+        locacao.setDataRetorno(null);
+
         Set<ConstraintViolation<Locacao>> violations = validator.validate(locacao);
         
         Iterator it = violations.iterator();

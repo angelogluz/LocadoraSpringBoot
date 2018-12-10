@@ -119,7 +119,6 @@ public class ClienteEntityTest {
     @Test
     public void deveSerNuloCPF() {
         Cliente cliente = new Cliente();
-        cliente.setNome("Wally");
         cliente.setCpf("");
         
         Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
@@ -133,16 +132,21 @@ public class ClienteEntityTest {
      @Test
     public void deveSerValidoCPF() {
         Cliente cliente = new Cliente();
-        cliente.setNome("Wally");
-        cliente.setCpf("998877665");
+        cliente.setCpf("88888888999");
+        
+         assertThat(cliente.getCpf(), is("88888888999"));
+    }
+    @Test
+    public void naoDeveSerValidoCPF(){
+         Cliente cliente = new Cliente();
+        cliente.setCpf("999.999.888-88");
         
         Set<ConstraintViolation<Cliente>> violations = validator.validate(cliente);
         Iterator it = violations.iterator();
-        
         ConstraintViolationImpl x = (ConstraintViolationImpl) it.next();
         String message = x.getMessage();
         
-        assertThat(message, is("O CPF não é válido"));
+        assertThat(message, is("O CPF não é válido"));	
     }
     /*O nome não deverá aceitar espaços em branco 
     no início e no fim Mensagem de validação: Não possui.
@@ -179,8 +183,8 @@ public class ClienteEntityTest {
         Cliente cliente2 = new Cliente();
 
         try {
-            cliente1.setNome("Jaco");
-            cliente2.setNome("Jaco");
+            cliente1.setNome("Wally");
+            cliente2.setNome("Wally");
             Assert.fail();
 
         } catch (Exception e) {
