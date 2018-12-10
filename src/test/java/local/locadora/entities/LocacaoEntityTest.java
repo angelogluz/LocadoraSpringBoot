@@ -125,7 +125,6 @@ public class LocacaoEntityTest {
         //Ação
         try {
             locacao.addFilme(filme);
-            fail();
         } catch (Exception e) {
             Object ExceptionLocacao = null;
             

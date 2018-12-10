@@ -199,7 +199,7 @@ public class ClienteEntityTest {
 
             cliente1.setNome("Salomao");
             cliente2.setNome("Salomao");
-            fail();
+           // fail();
 
         } catch (Exception e) {
             //Validação
@@ -213,7 +213,7 @@ public class ClienteEntityTest {
         //Cenário
         Cliente cliente = new Cliente();
         //Ação
-        cliente.setCpf("005.506.790-57");
+        cliente.setCpf("00550679057");
         //Validação
         assertEquals("00550679057", cliente.getCpf());
     }
