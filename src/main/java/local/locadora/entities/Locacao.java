@@ -27,12 +27,12 @@ public class Locacao implements Serializable {
     @Column
     @NotNull(message = "Pelo menos um filme deve ser selecionado")
     private List<Filme> filmes;
-    @NotNull(message = "A data de locação não deve ser nula")
+    @NotNull(message = "A data de retorno não deve ser nula")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataLocacao;
     @NotNull(message = "A data de retorno não deve ser nula")
     @Temporal(TemporalType.TIMESTAMP)
-    @Future(message = "A data deve retorno deve ser futura")
+    @Future(message = "A data de retorno deve ser futura")
     private Date dataRetorno;
     @Digits(integer = 2, fraction = 2, message = "O Preço deve ter no máximo dois dígitos")
     @Positive(message = "O valor da locação deve ser positivo")

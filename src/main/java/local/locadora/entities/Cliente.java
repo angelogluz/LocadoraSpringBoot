@@ -34,7 +34,7 @@ public class Cliente implements Serializable {
 
     public Cliente(String nome, String cpf) {
         this.nome = nome.trim();
-        this.cpf = cpf;
+        this.cpf = cpf.replaceAll("[.-]", "");
     }
 
     public String getCpf() {
@@ -42,7 +42,7 @@ public class Cliente implements Serializable {
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        this.cpf = cpf.replaceAll("[.-]", "");
     }
 
     public String getNome() {
