@@ -1,4 +1,3 @@
-
 package local.locadora.entities;
 
 import java.util.Calendar;

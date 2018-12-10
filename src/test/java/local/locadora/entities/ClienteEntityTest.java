@@ -1,4 +1,3 @@
-
 package local.locadora.entities;
 
 import org.hibernate.validator.internal.engine.ConstraintViolationImpl;
